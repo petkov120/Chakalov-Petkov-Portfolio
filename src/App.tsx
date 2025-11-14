@@ -323,7 +323,7 @@ function Frame383() {
   return (
     <div className="basis-0 box-border content-stretch flex flex-col gap-6 md:gap-6 lg:gap-8 grow items-start justify-start leading-[0] min-h-px min-w-px p-0 relative shrink-0 lg:max-w-[60%] xl:max-w-[55%]">
       <motion.div 
-        className="font-['FreeSans:Bold',_sans-serif] not-italic relative shrink-0 text-[#150c0c] text-sm md:text-2xl lg:text-4xl tracking-[0.03em] w-full cursor-default"
+        className="font-['FreeSans:Bold',_sans-serif] not-italic relative shrink-0 text-[#150c0c] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.03em] w-full cursor-default"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
@@ -332,7 +332,7 @@ function Frame383() {
         <p className="block leading-[1.2]">Petkov.Chakalov</p>
       </motion.div>
       <motion.div 
-        className="font-['Arial:Bold',_sans-serif] not-italic relative shrink-0 text-[#140202] text-3xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[-0.04em] w-full cursor-default"
+        className="font-['Arial:Bold',_sans-serif] not-italic relative shrink-0 text-[#140202] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[-0.04em] w-full cursor-default"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
@@ -341,7 +341,7 @@ function Frame383() {
         <p className="block leading-[0.85]">{`Chakalov `}</p>
       </motion.div>
       <motion.div 
-        className="font-['Arial:Bold',_sans-serif] not-italic relative shrink-0 text-[#150c0c] text-3xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[-0.04em] w-full cursor-default"
+        className="font-['Arial:Bold',_sans-serif] not-italic relative shrink-0 text-[#150c0c] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-[-0.04em] w-full cursor-default"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
@@ -350,7 +350,7 @@ function Frame383() {
         <p className="block leading-[0.85] md:whitespace-nowrap">Petkov Richard</p>
       </motion.div>
       <motion.div 
-        className="font-['Lora:Medium',_sans-serif] relative shrink-0 text-[#150c0c] text-base md:text-4xl lg:text-5xl xl:text-6xl tracking-[-0.02em] w-full cursor-default"
+        className="font-['Lora:Medium',_sans-serif] relative shrink-0 text-[#150c0c] text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-[-0.02em] w-full cursor-default"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
@@ -486,7 +486,7 @@ const Frame384 = React.memo(() => {
 
 function Frame385() {
   return (
-    <div className="box-border content-stretch flex flex-col lg:flex-row gap-8 lg:gap-[180px] items-start lg:items-center justify-start p-0 relative shrink-0 w-full">
+    <div className="box-border content-stretch flex flex-col lg:flex-row gap-6 sm:gap-7 md:gap-8 lg:gap-12 xl:gap-16 2xl:gap-24 items-start lg:items-center justify-start p-0 relative shrink-0 w-full">
       <Frame383 />
       <Frame384 />
     </div>
@@ -555,7 +555,7 @@ function Frame367() {
 
   return (
     <motion.button 
-      className="bg-[#2c1810] box-border content-stretch flex gap-1.5 md:gap-2.5 items-center justify-center px-3 md:px-8 lg:px-[32px] py-2.5 md:py-5 lg:py-[18px] relative rounded-full shrink-0 w-full max-w-[180px] md:max-w-[320px] cursor-pointer transition-all duration-300 ease-out focus:outline-none"
+      className="bg-[#2c1810] box-border content-stretch flex gap-1.5 sm:gap-2 md:gap-2.5 items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 sm:py-2.5 md:py-3 lg:py-4 xl:py-5 2xl:py-6 relative rounded-full shrink-0 w-full max-w-[180px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] cursor-pointer transition-all duration-300 ease-out focus:outline-none"
       whileHover={{ 
         scale: window.innerWidth < 768 ? 1.02 : 1.05,
         backgroundColor: "#4a2c1a",
@@ -598,7 +598,7 @@ function Frame367() {
           </g>
         </svg>
       </div>
-      <div className="font-['Inter:Semi_Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#ffffff] text-xs md:text-lg lg:text-xl text-nowrap tracking-[-0.02em]">
+      <div className="font-['Inter:Semi_Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#ffffff] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-nowrap tracking-[-0.02em]">
         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">Available for work</p>
       </div>
     </motion.button>
@@ -646,7 +646,7 @@ function ResumeButton() {
           />
         </svg>
       </div>
-      <div className="font-['Inter:Semi_Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#2c1810] text-xs md:text-lg lg:text-xl text-nowrap tracking-[-0.02em]">
+      <div className="font-['Inter:Semi_Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#2c1810] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-nowrap tracking-[-0.02em]">
         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">Download Resume</p>
       </div>
     </motion.button>
@@ -655,8 +655,8 @@ function ResumeButton() {
 
 function Frame386() {
   return (
-    <AnimatedSection delay={0.6} className="box-border content-stretch flex flex-col gap-8 md:gap-16 lg:gap-[54px] items-start justify-start p-0 relative shrink-0 w-full lg:max-w-[65%] xl:max-w-[60%]">
-      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.5] not-italic relative shrink-0 text-[#7c736a] text-base md:text-2xl lg:text-3xl xl:text-4xl tracking-[-0.01em] w-full">
+    <AnimatedSection delay={0.6} className="box-border content-stretch flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 items-start justify-start p-0 relative shrink-0 w-full lg:max-w-[65%] xl:max-w-[60%]">
+      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.5] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
         <p className="block">
           With 3+ years in product design and UI development, I partner with teams to craft heartfelt solutions in
           education, health tech, customer experience, and business growth.
@@ -883,7 +883,7 @@ function MobileHeroSection() {
   return (
     <div className="bg-[#f7f6f3] relative w-full" data-name="Frame">
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start pb-8 px-6 md:px-16 lg:px-[98px] pt-[42px] relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start pb-8 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 2xl:pt-20 relative w-full max-w-7xl mx-auto">
           <MobileFrame2063 />
           <motion.div 
             className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#7c736a] text-[16px] tracking-[-0.16px] w-[327px]"
@@ -930,7 +930,7 @@ function HeroSection() {
         aria-label="Hero section with designer introduction"
       >
         <div className="relative size-full">
-          <div className="box-border content-stretch flex flex-col gap-8 md:gap-8 lg:gap-[24px] items-start justify-start pb-12 md:pb-16 lg:pb-[80px] px-6 md:px-16 lg:px-[98px] pt-12 md:pt-16 lg:pt-[60px] relative min-h-screen">
+          <div className="box-border content-stretch flex flex-col gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 items-start justify-start pb-8 sm:pb-10 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 2xl:pt-20 relative min-h-screen max-w-7xl mx-auto">
             <Frame385 />
             <Frame386 />
           </div>
@@ -985,8 +985,8 @@ function TreatmentPathProject({ onViewCaseStudy }: { onViewCaseStudy: () => void
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="treatmentpath">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             <ProjectSlide 
               backgroundColor="#ac83f3"
               className="group relative overflow-hidden focus:ring-2 focus:ring-[#ac83f3] focus:ring-offset-4 focus:outline-none"
@@ -1035,19 +1035,19 @@ function TreatmentPathProject({ onViewCaseStudy }: { onViewCaseStudy: () => void
               </motion.div>
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
                     <div className="box-border content-stretch flex flex-row items-center justify-between gap-4 md:gap-6 px-3 py-[5px] relative w-full">
-                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg md:text-3xl lg:text-4xl xl:text-5xl text-nowrap tracking-[-0.02em]">
+                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-nowrap tracking-[-0.02em]">
                         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">TreatmentPath</p>
                       </div>
                       <div className="box-border content-stretch flex flex-col gap-[3px] items-end justify-start leading-[0] p-0 relative shrink-0 text-nowrap">
-                        <div className="font-['Lora:Medium',_sans-serif] relative shrink-0 text-[#150c0c] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.02em]">
+                        <div className="font-['Lora:Medium',_sans-serif] relative shrink-0 text-[#150c0c] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.02em]">
                           <p className="adjustLetterSpacing block leading-[normal] text-nowrap whitespace-pre text-right">Healthtech</p>
                         </div>
-                        <div className="font-['IBM_Plex_Sans_Condensed:Medium',_sans-serif] not-italic relative shrink-0 text-[#7c736a] text-sm md:text-lg lg:text-xl xl:text-2xl tracking-[-0.01em]">
+                        <div className="font-['IBM_Plex_Sans_Condensed:Medium',_sans-serif] not-italic relative shrink-0 text-[#7c736a] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[-0.01em]">
                           <p className="adjustLetterSpacing block leading-[normal] text-nowrap whitespace-pre text-right">2025</p>
                         </div>
                       </div>
@@ -1062,7 +1062,7 @@ function TreatmentPathProject({ onViewCaseStudy }: { onViewCaseStudy: () => void
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   TreatmentPath is a healthcare technology platform designed to streamline patient treatment workflows. 
                   The aim was to make an easy-to-use system for healthcare providers to manage treatment plans effectively. 
@@ -1088,8 +1088,8 @@ function UniversityxProject({ onViewCaseStudy }: { onViewCaseStudy: () => void }
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="universityx">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             <ProjectSlide 
               backgroundColor="#9d2d9d"
               className="group relative overflow-hidden focus:ring-2 focus:ring-[#9d2d9d] focus:ring-offset-4 focus:outline-none"
@@ -1136,12 +1136,12 @@ function UniversityxProject({ onViewCaseStudy }: { onViewCaseStudy: () => void }
               </motion.div>
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
                     <div className="box-border content-stretch flex flex-row items-center justify-between gap-4 md:gap-6 px-3 py-[5px] relative w-full">
-                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg md:text-3xl lg:text-4xl xl:text-5xl text-nowrap tracking-[-0.02em]">
+                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-nowrap tracking-[-0.02em]">
                         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">Universityx</p>
                       </div>
                       <div className="box-border content-stretch flex flex-col gap-[3px] items-end justify-start leading-[0] p-0 relative shrink-0">
@@ -1163,7 +1163,7 @@ function UniversityxProject({ onViewCaseStudy }: { onViewCaseStudy: () => void }
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   Created AI and gamification solutions to improve student engagement and retention. This helps students learn
                   more effectively, reduces the workload for lecturers, and increases revenue for schools. Led the product
@@ -1182,8 +1182,8 @@ function OpenxpProject() {
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="openxp">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             <ProjectSlide backgroundColor="#372270">
               <motion.div
                 className="absolute bg-center bg-contain bg-no-repeat h-[75%] md:h-[80%] lg:h-[85%] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[90%] md:w-[85%] lg:w-[80%] max-w-[929px] max-h-[682px]"
@@ -1195,12 +1195,12 @@ function OpenxpProject() {
               />
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
                     <div className="box-border content-stretch flex flex-row items-center justify-between gap-4 md:gap-6 px-3 py-[5px] relative w-full">
-                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg md:text-3xl lg:text-4xl xl:text-5xl text-nowrap tracking-[-0.02em]">
+                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-nowrap tracking-[-0.02em]">
                         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">Openxp</p>
                       </div>
                       <div className="box-border content-stretch flex flex-col gap-[3px] items-end justify-start leading-[0] p-0 relative shrink-0">
@@ -1222,7 +1222,7 @@ function OpenxpProject() {
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   Openxp is an exam prep software designed to help you get ready for those big career-defining tests. The aim
                   was to create an easy-to-use app for exam preparation. With AI tools, students can easily make better choices
@@ -1242,8 +1242,8 @@ function MolerHealthProject() {
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="molerhealth">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             {/* MolerHealth Dashboard - PROTECTED IMAGE IMPLEMENTATION */}
             <ProjectSlide backgroundColor="#10b981">
               <motion.div
@@ -1259,12 +1259,12 @@ function MolerHealthProject() {
               />
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
                     <div className="box-border content-stretch flex flex-row items-center justify-between gap-4 md:gap-6 px-3 py-[5px] relative w-full">
-                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg md:text-3xl lg:text-4xl xl:text-5xl text-nowrap tracking-[-0.02em]">
+                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-nowrap tracking-[-0.02em]">
                         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">MolerHealth</p>
                       </div>
                       <div className="box-border content-stretch flex flex-col gap-[3px] items-end justify-start leading-[0] p-0 relative shrink-0">
@@ -1286,7 +1286,7 @@ function MolerHealthProject() {
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   MolerHealth is a comprehensive medical dashboard system designed to streamline healthcare practice management. 
                   The platform provides doctors with intuitive patient analytics, appointment scheduling, and treatment tracking tools. 
@@ -1306,8 +1306,8 @@ function CustomerExperienceProject() {
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="customer-experience">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             <ProjectSlide backgroundColor="#0d6efd">
               <motion.div
                 className="absolute bg-center bg-contain bg-no-repeat h-[75%] md:h-[80%] lg:h-[85%] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[90%] md:w-[85%] lg:w-[80%] max-w-[929px] max-h-[682px]"
@@ -1319,7 +1319,7 @@ function CustomerExperienceProject() {
               />
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
@@ -1362,7 +1362,7 @@ function CustomerExperienceProject() {
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   Designed comprehensive customer experience solutions for B2B software platforms. Focused on creating intuitive
                   interfaces that enhance user satisfaction and business outcomes. Led cross-functional teams to deliver
@@ -1381,8 +1381,8 @@ function WikipediaProject() {
   return (
     <AnimatedSection className="min-h-[60vh] sm:min-h-[80vh] md:min-h-screen relative shrink-0 w-full mb-8 sm:mb-0" data-section="wikipedia">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-6 md:px-16 lg:px-[98px] py-1 sm:py-3 md:py-[34px] relative w-full">
-          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-[47px] items-start justify-start p-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[60vh] sm:min-h-[80vh] md:min-h-screen items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 2xl:py-16 relative w-full max-w-7xl mx-auto">
+          <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 items-start justify-start p-0 relative shrink-0 w-full">
             <ProjectSlide backgroundColor="#0645AD">
               <motion.div
                 className="absolute bg-center bg-contain bg-no-repeat h-[75%] md:h-[80%] lg:h-[85%] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[90%] md:w-[85%] lg:w-[80%] max-w-[929px] max-h-[682px]"
@@ -1394,7 +1394,7 @@ function WikipediaProject() {
               />
             </ProjectSlide>
 
-            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-12 lg:gap-[35px] items-center justify-start p-0 relative shrink-0 w-full">
+            <AnimatedSection delay={0.2} className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 items-center justify-start p-0 relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 items-start justify-start p-0 relative shrink-0 w-full">
                 <div className="relative shrink-0 w-full">
                   <div className="relative size-full">
@@ -1415,7 +1415,7 @@ function WikipediaProject() {
                     
                     {/* Small screens and up - Full title */}
                     <div className="box-border content-stretch hidden sm:flex flex-row items-center justify-between gap-4 md:gap-6 px-3 py-[5px] relative w-full">
-                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg md:text-3xl lg:text-4xl xl:text-5xl text-nowrap tracking-[-0.02em]">
+                      <div className="font-['Lora:Medium',_sans-serif] leading-[0] relative shrink-0 text-[#150c0c] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-nowrap tracking-[-0.02em]">
                         <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">Wikipedia Community Profile</p>
                       </div>
                       <div className="box-border content-stretch flex flex-col gap-[3px] items-end justify-start leading-[0] p-0 relative shrink-0">
@@ -1437,7 +1437,7 @@ function WikipediaProject() {
                   </div>
                 </div>
               </div>
-              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base md:text-xl lg:text-2xl xl:text-3xl tracking-[-0.01em] w-full">
+              <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] leading-[1.6] not-italic relative shrink-0 text-[#7c736a] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[-0.01em] w-full">
                 <p className="block">
                   Designed an improved version of the Wikipedia Community Portal focused on accessibility and cognitive clarity. 
                   Created prototypes with assistive features like text-to-speech, a distraction-free reading mode, and simplified navigation. 
@@ -1915,12 +1915,12 @@ function ShowcaseGallery() {
   return (
     <AnimatedSection className="min-h-screen relative shrink-0 w-full bg-gradient-to-b from-[#f7f6f3] to-[#f0f0ed]" data-section="showcase">
       <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-[80px] items-start justify-start px-6 md:px-16 lg:px-[98px] py-8 sm:py-12 md:py-16 lg:py-[80px] relative min-h-screen">
+        <div className="box-border content-stretch flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 items-start justify-start px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 2xl:py-20 relative min-h-screen max-w-7xl mx-auto">
           
           {/* Section Header */}
           <AnimatedSection className="w-full text-center">
             <motion.div 
-              className="font-['Lora:Medium',_sans-serif] text-3xl md:text-5xl lg:text-6xl text-[#150c0c] tracking-[-0.02em] mb-4"
+              className="font-['Lora:Medium',_sans-serif] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-[#150c0c] tracking-[-0.02em] mb-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -1929,7 +1929,7 @@ function ShowcaseGallery() {
               Interactive Showcase
             </motion.div>
             <motion.div 
-              className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-lg md:text-xl lg:text-2xl text-[#7c736a] tracking-[-0.01em] max-w-2xl mx-auto"
+              className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-[#7c736a] tracking-[-0.01em] max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -1940,7 +1940,7 @@ function ShowcaseGallery() {
           </AnimatedSection>
 
           {/* Showcase Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 w-full">
             <ShowcaseItem
               title="Shopping App Interface"
               category="Mobile E-commerce"
