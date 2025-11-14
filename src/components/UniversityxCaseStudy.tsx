@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import svgPaths from "../imports/svg-2tq6bax80v";
-import imgPta1 from "../assets/3b9ef818ebbe3856fb9217a87724459cdaf11b3b.png";
-import imgNewHeroUI from "../assets/72a85423b3a9ebdb8609dd71633a79686c5efdfe.png";
-import imgChatGptImageJul122025014208Am1 from "../assets/3f8ca804325f91b64a84f45b771e2522e94460ec.png";
-import imgChatGptImageJul122025011140Am2 from "../assets/4774270e396720874460c4f8aeecbc8d19672f4e.png";
-import imgAvaters from "../assets/f578f9c2a181ef669150341163e63e6e9da01878.png";
-import imgCompetitionVictory from "../assets/df94e6620ca82c3d7423631dacfcf889b6157873.png";
+import imgPta1 from "../assets/3b9ef818ebbe3856fb9217a87724459cdaf11b3b.webp";
+import imgNewHeroUI from "../assets/72a85423b3a9ebdb8609dd71633a79686c5efdfe.webp";
+import imgChatGptImageJul122025014208Am1 from "../assets/3f8ca804325f91b64a84f45b771e2522e94460ec.webp";
+import imgChatGptImageJul122025011140Am2 from "../assets/4774270e396720874460c4f8aeecbc8d19672f4e.webp";
+import imgAvaters from "../assets/f578f9c2a181ef669150341163e63e6e9da01878.webp";
+import imgCompetitionVictory from "../assets/df94e6620ca82c3d7423631dacfcf889b6157873.webp";
 import HomeSmile from "../imports/HomeSmile-46-392";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+// Design Solution images
+
+import imgAITutorInterface from "../assets/ai-tutor-interface.webp";
+import imgQuizInteractionUI from "../assets/quiz-interaction-ui.webp";
+import imgLessonCompletionUI from "../assets/lesson-completion-ui.webp";
+import imgCourseSetupUI from "../assets/course-setup-ui.webp";
+import imgAnalyticsDashboardUI from "../assets/analytics-dashboard-ui.webp";
+import imgInstitutionDashboardUI from "../assets/institution-dashboard-ui.webp";
+import imgProgramsManagementUI from "../assets/programs-management.webp";
+import imgWhatWeLearnt from "../assets/petkov-what-we-learnt-.webp";
 
 interface UniversityxCaseStudyProps {
   onClose: () => void;
@@ -807,39 +817,76 @@ function Frame2074() {
       </motion.div>
       
       <motion.div 
-        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full lg:max-w-[480px]"
+        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
       >
-        <p className="leading-[1.6] md:leading-[1.7] lg:leading-[65px]">Nigeria's education system faces a crisis: 40% of university students drop out before completing their degrees, primarily due to disengagement and lack of personalized learning. Meanwhile, lecturers spend 60% of their time on administrative tasks rather than teaching. Universities are losing millions in potential revenue as enrollment rates decline and student retention becomes increasingly difficult. The COVID-19 pandemic accelerated digital adoption, creating an unprecedented opportunity to redesign educational experiences from the ground up.</p>
+        <p className="leading-[1.6] md:leading-[1.7] lg:leading-[65px]">Nigeria's education system faces a crisis: 40% of students drop out due to disengagement, while lecturers spend 60% of their time on administrative tasks. The COVID-19 pandemic accelerated digital adoption, creating an unprecedented opportunity to redesign educational experiences.</p>
       </motion.div>
     </div>
   );
 }
 
-function Frame2075() {
+function ContextVisualization() {
   return (
-    <div className="flex flex-col gap-4 md:gap-6 lg:gap-[31px] items-start justify-between relative shrink-0 w-full h-full">
-      <motion.div 
-        className="aspect-[4/3] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1" 
-        data-name="Student Avatars" 
-        style={{ backgroundImage: `url('${imgAvaters}')` }}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-      />
-      <motion.div 
-        className="aspect-[16/10] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-md" 
-        data-name="Mobile Interface Screenshot" 
-        style={{ backgroundImage: `url('${imgChatGptImageJul122025014208Am1}')` }}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-      />
-    </div>
+    <motion.div 
+      className="w-full bg-gradient-to-br from-[#9d2d9d]/10 to-[#9d2d9d]/5 rounded-lg p-6 md:p-8 lg:p-10 border border-[#9d2d9d]/20"
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      viewport={{ once: true }}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* Stat 1: Dropout Rate */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
+            40%
+          </div>
+          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
+            Student Dropout Rate
+          </div>
+        </motion.div>
+
+        {/* Stat 2: Admin Time */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
+            60%
+          </div>
+          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
+            Lecturer Time on Admin Tasks
+          </div>
+        </motion.div>
+
+        {/* Stat 3: Opportunity */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
+            📈
+          </div>
+          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
+            Digital Transformation Opportunity
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -852,22 +899,10 @@ function ContextOpportunitySection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
     >
-      {/* Mobile/Tablet Layout - Stacked */}
-      <div className="lg:hidden">
+      {/* Content Layout */}
+      <div className="flex flex-col gap-6 md:gap-8">
         <Frame2074 />
-        <div className="mt-6">
-          <Frame2075 />
-        </div>
-      </div>
-
-      {/* Desktop Layout - Side by Side (Newspaper Style) */}
-      <div className="hidden lg:flex gap-6 xl:gap-[18px] items-start justify-start relative w-full min-h-[600px]">
-        <div className="flex-1 max-w-[55%] flex flex-col h-full">
-          <Frame2074 />
-        </div>
-        <div className="flex-1 max-w-[45%] flex flex-col h-full">
-          <Frame2075 />
-        </div>
+        <ContextVisualization />
       </div>
     </motion.section>
   );
@@ -996,142 +1031,61 @@ function MainContent({ activeSection }: { activeSection: string }) {
             >
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 1 — AI-Powered Personalization Engine
+                  Process 1 — AI-Powered Personalization
                 </h3>
                 
-                <p>
-                  Built a recommendation system that analyzes learning patterns, time spent on topics, and assessment performance to create individualized study paths. Unlike generic adaptive learning, our AI considers cultural context and learning preferences specific to Nigerian students.
+                <p className="mb-4">
+                  An adaptive tutoring system that adjusts to how each student learns. The AI provides tailored explanations, questions, and video flashcards to make studying more interactive and responsive.
                 </p>
 
                 <div>
-                  <p className="mb-2 mt-4">Core AI features:</p>
+                  <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Content difficulty adjustment based on individual performance
+                      Conversational AI tutor
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Learning style detection (visual, auditory, kinesthetic)
+                      Dynamic lesson branching
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Optimal study time recommendations
+                      Voice/video flashcards
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Predictive analytics for at-risk students
+                      On-demand help via "Message AI Tutor"
                     </li>
                   </ul>
                 </div>
-              </div>
 
-              <InsightCallout>
-                <strong>AI Personalization:</strong> Our machine learning model achieved 78% accuracy in predicting student success within the first month of usage. By analyzing engagement patterns, study habits, and assessment performance, we could identify at-risk students early and provide targeted interventions—turning potential dropouts into success stories.
-              </InsightCallout>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 2 — Gamification Psychology Framework
-                </h3>
-                
-                <p>
-                  Designed a comprehensive reward system that balances extrinsic motivators (points, badges, leaderboards) with intrinsic motivation (mastery, autonomy, purpose). The system adapts reward frequency based on individual motivation profiles to prevent both burnout and disengagement.
-                </p>
-
-                <div>
-                  <p className="mb-2 mt-4">Gamification elements:</p>
-                  <ul className="space-y-1 pl-6 md:pl-8">
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Progressive skill trees for each subject area
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Collaborative team challenges and peer learning
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Achievement systems tied to real learning outcomes
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Virtual study groups with social accountability
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 3 — Lecturer Automation Tools
-                </h3>
-                
-                <p>
-                  Created an intelligent assistant that handles routine tasks like grading, attendance tracking, and basic student queries. This freed lecturers to focus on high-value activities like personalized mentoring and curriculum development.
-                </p>
-
-                <div>
-                  <p className="mb-2 mt-4">Automation features:</p>
-                  <ul className="space-y-1 pl-6 md:pl-8">
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Automated essay scoring with detailed feedback
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Smart scheduling for office hours and consultations
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Chatbot for common student questions
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Analytics dashboard for tracking class performance
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <InsightCallout>
-                <strong>Lecturer Efficiency:</strong> Beta testing with 15 lecturers across 3 universities showed an average 52% reduction in administrative time. More importantly, student satisfaction scores increased by 34% as lecturers could dedicate more time to meaningful interactions and personalized guidance.
-              </InsightCallout>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 4 — Revenue Generation Model
-                </h3>
-
-                <p>
-                  Developed a sustainable business model that creates value for all stakeholders: students get better learning outcomes, lecturers save time, and institutions increase retention rates and can justify premium pricing.
-                </p>
-
-                {/* Platform Interface Screenshot */}
+                {/* AI Tutor Interface Screenshot */}
                 <motion.div 
                   className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  onDoubleClick={() => openImagePopup(imgPta1)}
+                  onDoubleClick={() => openImagePopup(imgAITutorInterface)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   role="button"
                   tabIndex={0}
-                  aria-label="Double-click to view full-size image"
+                  aria-label="AI-Tutor interface showing real-time adaptive guidance"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      openImagePopup(imgPta1);
+                      openImagePopup(imgAITutorInterface);
                     }
                   }}
                 >
                   <div className="relative w-full">
-                    <div className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-[#9d2d9d]">
-                      <div
-                        className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                        style={{ backgroundImage: `url('${imgPta1}')` }}
+                    <div className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-[#9d2d9d] flex items-center justify-center overflow-hidden">
+                      <ImageWithFallback
+                        src={`${imgAITutorInterface}?v=2`}
+                        alt="AI-Tutor interface showing real-time adaptive guidance"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     
@@ -1156,37 +1110,412 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   {/* Caption */}
                   <div className="p-3 md:p-4 bg-white border-t border-gray-100">
                     <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                      Universityx platform interface showing AI-powered personalization and gamification elements
+                      Screenshot: AI-Tutor interface showing real-time adaptive guidance.
                     </p>
                   </div>
                 </motion.div>
+              </div>
+
+              <div>
+                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
+                  Process 2 — Gamification Framework
+                </h3>
+                
+                <p className="mb-4">
+                  Built a lightweight reward system that keeps learning fun and satisfying. Students earn XP, track streaks, and receive instant feedback after each lesson — encouraging consistency without overwhelming them.
+                </p>
 
                 <div>
-                  <p className="mb-2">Revenue streams:</p>
+                  <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Institutional licensing with per-student pricing
+                      XP and progress-based rewards
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Premium features for enhanced personalization
+                      Lesson streaks and achievement tracking
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Professional development courses for lecturers
-                    </li>
-                    <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                      Data analytics consulting for educational insights
+                      Quick feedback and performance summaries
                     </li>
                   </ul>
                 </div>
+
+                {/* Screenshots */}
+                <div className="flex flex-col gap-4 md:gap-6 mt-4">
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgQuizInteractionUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Quiz Interaction UI showing immediate XP feedback on correct answers"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgQuizInteractionUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgQuizInteractionUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Quiz Interaction UI – Immediate XP feedback on correct answers
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgLessonCompletionUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Lesson Completion UI showing visual streaks, accuracy, and celebration moments"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgLessonCompletionUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgLessonCompletionUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Lesson Completion UI – Visual streaks, accuracy, and celebration moments.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
 
-              <p>
-                This comprehensive approach addressed the entire educational ecosystem, creating sustainable value that justified our ₦10 million competition victory.
-              </p>
+              <div>
+                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
+                  Process 3 — Lecturer & Management System
+                </h3>
+                
+                <p className="mb-4">
+                  Built a unified system for lecturers and administrators to create, manage, and monitor academic activities. The dashboard streamlines course setup, progress tracking, and student engagement, reducing manual workload and improving oversight.
+                </p>
+
+                <div>
+                  <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
+                  <ul className="space-y-1 pl-6 md:pl-8">
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Course creation tools (modules, lessons, live classes, quizzes)
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Student progress and performance analytics
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Automated activity tracking
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Integrated dashboard for lecturers and admins
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Screenshots */}
+                <div className="flex flex-col gap-4 md:gap-6 mt-4">
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgCourseSetupUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Course Setup UI for managing modules, assignments, and quizzes"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgCourseSetupUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgCourseSetupUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Course Setup UI – Manage modules, assignments, and quizzes effortlessly.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgAnalyticsDashboardUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Analytics Dashboard UI showing student performance and progress summaries"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgAnalyticsDashboardUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgAnalyticsDashboardUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Analytics Dashboard UI – View student performance and progress summaries.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
+                  Process 4 — Institution Management System
+                </h3>
+                
+                <p className="mb-4">
+                  Developed an administrative layer that helps universities manage lecturers, students, and programs from a single dashboard. This system provides full visibility into operations and simplifies decision-making across faculties and departments.
+                </p>
+
+                <div>
+                  <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
+                  <ul className="space-y-1 pl-6 md:pl-8">
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Central dashboard for lecturers, students, and active programs
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Faculty, department, and course management
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Unified data view for institutional analytics
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                      Seamless coordination between academic and administrative units
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Screenshots */}
+                <div className="flex flex-col gap-4 md:gap-6 mt-4">
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgInstitutionDashboardUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Institution Dashboard UI showing overview of enrolled students, lecturers, and programs"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgInstitutionDashboardUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgInstitutionDashboardUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Institution Dashboard UI – Overview of enrolled students, lecturers, and programs.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    onDoubleClick={() => openImagePopup(imgProgramsManagementUI)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Programs Management UI for faculties and departments management with course-level control"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openImagePopup(imgProgramsManagementUI);
+                      }
+                    }}
+                  >
+                    <div className="relative w-full">
+                      <div className="aspect-[4/3] w-full bg-[#9d2d9d]">
+                        <div
+                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
+                          style={{ backgroundImage: `url('${imgProgramsManagementUI}')` }}
+                        />
+                      </div>
+                      
+                      <motion.div
+                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <span className="text-lg">🔍</span>
+                          <span>Double-click to expand</span>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                        Programs Management UI – Faculties and departments management with course-level control.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
           </section>
 
@@ -1225,86 +1554,6 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <li className="relative">
                     <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
                     <strong>Media coverage</strong> as an innovative solution to educational technology
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Student Engagement Metrics
-                </h3>
-                <ul className="space-y-1 pl-6 md:pl-8">
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>67% increase</strong> in daily active users compared to traditional LMS
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>45% improvement</strong> in course completion rates
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>38% reduction</strong> in student dropout rates during pilot testing
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>Average 3.2 hours</strong> daily engagement time per student
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>89% student satisfaction</strong> rate with personalized learning paths
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Institutional Benefits
-                </h3>
-                <ul className="space-y-1 pl-6 md:pl-8">
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>52% reduction</strong> in lecturer administrative workload
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>34% increase</strong> in student satisfaction with teaching quality
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>₦2.3 million potential annual savings</strong> per institution through automation
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>25% increase</strong> in retention rates leading to higher revenue
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    <strong>Real-time analytics</strong> for data-driven educational decisions
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Technical Achievements
-                </h3>
-                <ul className="space-y-1 pl-6 md:pl-8">
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    AI recommendation system with 78% accuracy in predicting student success
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    Offline-first architecture supporting unreliable internet connectivity
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    Scalable gamification framework adaptable to different subjects
-                  </li>
-                  <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
-                    Comprehensive analytics dashboard for institutional insights
                   </li>
                 </ul>
               </div>
@@ -1355,8 +1604,67 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
                     <strong>Stakeholder alignment:</strong> Managing needs of students, lecturers, and institutions required careful prioritization and clear communication
                   </li>
+                  <li className="relative">
+                    <span className="absolute -left-6 md:-left-8 text-[#9d2d9d]">•</span>
+                    <strong>Not being overwhelmed by AI tools:</strong> I used tools like UX Pilot to quickly test flows and validate designs efficiently, learning to leverage AI as a productivity enhancer rather than letting it complicate the process
+                  </li>
                 </ul>
               </div>
+
+              {/* What We Learnt Image */}
+              <motion.div 
+                className="bg-[#9d2d9d] rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                onDoubleClick={() => openImagePopup(imgWhatWeLearnt)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                role="button"
+                tabIndex={0}
+                aria-label="Illustration about not being overwhelmed by AI tools"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openImagePopup(imgWhatWeLearnt);
+                  }
+                }}
+              >
+                <div className="relative w-full">
+                  <div className="w-full bg-[#9d2d9d] flex items-center justify-center overflow-hidden" style={{ minHeight: '400px' }}>
+                    <ImageWithFallback
+                      src={imgWhatWeLearnt}
+                      alt="Illustration about not being overwhelmed by AI tools like UX Pilot"
+                      className="w-full h-auto object-contain max-h-[600px]"
+                    />
+                  </div>
+                  
+                  {/* Hover overlay with expand hint */}
+                  <motion.div
+                    className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  >
+                    <motion.div
+                      className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <span className="text-lg">🔍</span>
+                      <span>Double-click to expand</span>
+                    </motion.div>
+                  </motion.div>
+                </div>
+                
+                {/* Caption */}
+                <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                  <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                    Using AI tools like UX Pilot to efficiently test flows without being overwhelmed
+                  </p>
+                </div>
+              </motion.div>
 
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
