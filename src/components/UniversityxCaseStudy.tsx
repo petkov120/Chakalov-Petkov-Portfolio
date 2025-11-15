@@ -817,76 +817,39 @@ function Frame2074() {
       </motion.div>
       
       <motion.div 
-        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full"
+        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full lg:max-w-[480px]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
       >
-        <p className="leading-[1.6] md:leading-[1.7] lg:leading-[65px]">Nigeria's education system faces a crisis: 40% of students drop out due to disengagement, while lecturers spend 60% of their time on administrative tasks. The COVID-19 pandemic accelerated digital adoption, creating an unprecedented opportunity to redesign educational experiences.</p>
+        <p className="leading-[1.6] md:leading-[1.7] lg:leading-[65px]">Nigeria's education system faces a crisis: 40% of university students drop out before completing their degrees, primarily due to disengagement and lack of personalized learning. Meanwhile, lecturers spend 60% of their time on administrative tasks rather than teaching. Universities are losing millions in potential revenue as enrollment rates decline and student retention becomes increasingly difficult. The COVID-19 pandemic accelerated digital adoption, creating an unprecedented opportunity to redesign educational experiences from the ground up.</p>
       </motion.div>
     </div>
   );
 }
 
-function ContextVisualization() {
+function Frame2075() {
   return (
-    <motion.div 
-      className="w-full bg-gradient-to-br from-[#9d2d9d]/10 to-[#9d2d9d]/5 rounded-lg p-6 md:p-8 lg:p-10 border border-[#9d2d9d]/20"
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      viewport={{ once: true }}
-    >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        {/* Stat 1: Dropout Rate */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
-            40%
-          </div>
-          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
-            Student Dropout Rate
-          </div>
-        </motion.div>
-
-        {/* Stat 2: Admin Time */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
-            60%
-          </div>
-          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
-            Lecturer Time on Admin Tasks
-          </div>
-        </motion.div>
-
-        {/* Stat 3: Opportunity */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-4xl md:text-5xl lg:text-6xl font-['IBM_Plex_Sans_Condensed:Bold',_sans-serif] text-[#9d2d9d] mb-2">
-            📈
-          </div>
-          <div className="text-sm md:text-base lg:text-lg font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-black">
-            Digital Transformation Opportunity
-          </div>
-        </motion.div>
-      </div>
-    </motion.div>
+    <div className="flex flex-col gap-4 md:gap-6 lg:gap-[31px] items-start justify-between relative shrink-0 w-full h-full">
+      <motion.div 
+        className="aspect-[4/3] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1" 
+        data-name="Student Avatars" 
+        style={{ backgroundImage: `url('${imgAvaters}')` }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+      />
+      <motion.div 
+        className="aspect-[16/10] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-md" 
+        data-name="Mobile Interface Screenshot" 
+        style={{ backgroundImage: `url('${imgChatGptImageJul122025014208Am1}')` }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: true }}
+      />
+    </div>
   );
 }
 
@@ -899,10 +862,22 @@ function ContextOpportunitySection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
     >
-      {/* Content Layout */}
-      <div className="flex flex-col gap-6 md:gap-8">
+      {/* Mobile/Tablet Layout - Stacked */}
+      <div className="lg:hidden">
         <Frame2074 />
-        <ContextVisualization />
+        <div className="mt-6">
+          <Frame2075 />
+        </div>
+      </div>
+
+      {/* Desktop Layout - Side by Side (Newspaper Style) */}
+      <div className="hidden lg:flex gap-6 xl:gap-[18px] items-start justify-start relative w-full min-h-[600px]">
+        <div className="flex-1 max-w-[55%] flex flex-col h-full">
+          <Frame2074 />
+        </div>
+        <div className="flex-1 max-w-[45%] flex flex-col h-full">
+          <Frame2075 />
+        </div>
       </div>
     </motion.section>
   );
