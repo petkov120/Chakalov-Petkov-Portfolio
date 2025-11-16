@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import React from 'react';
 import { useSound } from '../../hooks/useSound';
-import { AnimatedSection } from '../common/AnimatedSection';
 
 interface ProjectCardProps {
   title: string;
@@ -34,13 +33,15 @@ export function ProjectCard({
   };
 
   return (
-    <article 
-      className="max-w-3xl mx-auto rounded-3xl bg-white shadow-sm overflow-hidden"
-      data-section={dataSection}
-    >
+    <section className="relative z-10 mt-24 lg:mt-32 xl:mt-40">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-10">
+        <article 
+          className="max-w-3xl mx-auto rounded-3xl bg-white shadow-sm overflow-hidden"
+          data-section={dataSection}
+        >
       {/* Thumbnail area */}
       <div 
-        className={`p-6 sm:p-8 cursor-pointer group relative ${onViewCaseStudy ? '' : 'pointer-events-none'}`}
+        className={`p-6 sm:p-8 cursor-pointer group relative flex items-center justify-center ${onViewCaseStudy ? '' : 'pointer-events-none'}`}
         style={{ backgroundColor }}
         onClick={onViewCaseStudy ? handleClick : undefined}
         role={onViewCaseStudy ? "button" : undefined}
@@ -54,17 +55,16 @@ export function ProjectCard({
         onMouseEnter={() => playHoverSound(750, 150, 0.12)}
       >
         <motion.div
-          className="mx-auto max-h-72 w-auto"
+          className="w-full flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
           viewport={{ once: true }}
         >
-          <div
-            className="w-full h-full bg-center bg-contain bg-no-repeat"
-            style={{ backgroundImage: `url('${imageSrc}')` }}
-            role="img"
-            aria-label={`${title} UI preview`}
+          <img
+            src={imageSrc}
+            alt={`${title} UI preview`}
+            className="max-w-full h-auto object-contain max-h-[500px] sm:max-h-[600px] lg:max-h-[700px]"
           />
         </motion.div>
         
@@ -89,7 +89,7 @@ export function ProjectCard({
       </div>
 
       {/* Text area */}
-      <div className="px-4 sm:px-6 lg:px-8 py-5 sm:py-6 space-y-3">
+      <div className="px-4 sm:px-6 lg:px-8 pt-5 sm:pt-6 space-y-3" style={{ paddingBottom: '6rem' }}>
         <header className="flex items-baseline justify-between gap-4">
           <h3 className="text-sm sm:text-base font-semibold text-[#150c0c]">
             {title}
@@ -104,6 +104,8 @@ export function ProjectCard({
         </p>
       </div>
     </article>
+      </div>
+    </section>
   );
 }
 

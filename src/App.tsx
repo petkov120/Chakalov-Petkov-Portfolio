@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TreatmentPathCaseStudy from './components/TreatmentPathCaseStudy';
 import UniversityxCaseStudy from './components/UniversityxCaseStudy';
+import OpenxpCaseStudy from './components/OpenxpCaseStudy';
 import { PortfolioScrollIndicator } from './components/portfolio/PortfolioScrollIndicator';
 import { HeroSection } from './components/hero/HeroSection';
 import {
@@ -12,6 +13,7 @@ import {
   WikipediaProject
 } from './components/projects';
 import { ShowcaseGallery } from './components/showcase/ShowcaseGallery';
+import { SPACING } from './constants/spacing';
 
 // Memoized Portfolio Page Component for better performance
 const PortfolioPage = React.memo<{ onViewCaseStudy: (caseStudy: string) => void }>(({ onViewCaseStudy }) => {
@@ -20,14 +22,17 @@ const PortfolioPage = React.memo<{ onViewCaseStudy: (caseStudy: string) => void 
       {/* Portfolio Scroll Indicator */}
       <PortfolioScrollIndicator />
       
-      <HeroSection />
-      <TreatmentPathProject onViewCaseStudy={() => onViewCaseStudy('treatmentpath')} />
-      <UniversityxProject onViewCaseStudy={() => onViewCaseStudy('universityx')} />
-      <OpenxpProject />
-      <CustomerExperienceProject />
-      <MolerHealthProject />
-      <WikipediaProject />
-      <ShowcaseGallery />
+      {/* Main content with consistent spacing */}
+      <div className={`flex flex-col ${SPACING.gap.large}`}>
+        <HeroSection />
+        <TreatmentPathProject onViewCaseStudy={() => onViewCaseStudy('treatmentpath')} />
+        <UniversityxProject onViewCaseStudy={() => onViewCaseStudy('universityx')} />
+        <OpenxpProject onViewCaseStudy={() => onViewCaseStudy('openxp')} />
+        <CustomerExperienceProject />
+        <MolerHealthProject />
+        <WikipediaProject />
+        <ShowcaseGallery />
+      </div>
     </div>
   );
 });
@@ -38,6 +43,7 @@ const CaseStudyPage = React.memo<{ onBackHome: () => void; caseStudy: string }>(
     <div className="w-full min-h-screen">
       {caseStudy === 'treatmentpath' && <TreatmentPathCaseStudy onClose={onBackHome} />}
       {caseStudy === 'universityx' && <UniversityxCaseStudy onClose={onBackHome} />}
+      {caseStudy === 'openxp' && <OpenxpCaseStudy onClose={onBackHome} />}
     </div>
   );
 });
@@ -128,7 +134,7 @@ export default function App() {
           key="case-study"
           className="fixed inset-0 z-50 overflow-y-auto bg-[#f7f6f3]"
           role="dialog"
-          aria-label={`${activeCaseStudy === 'treatmentpath' ? 'TreatmentPath' : 'Universityx'} case study`}
+          aria-label={`${activeCaseStudy === 'treatmentpath' ? 'TreatmentPath' : activeCaseStudy === 'universityx' ? 'Universityx' : 'Openxp'} case study`}
           aria-modal="true"
         >
           <CaseStudyPage onBackHome={navigateToPortfolio} caseStudy={activeCaseStudy} />
