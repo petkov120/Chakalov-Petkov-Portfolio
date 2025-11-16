@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import React, { useState } from 'react';
 import { useSound } from '../../hooks/useSound';
 import { AnimatedSection } from '../common/AnimatedSection';
+import { SPACING } from '../../constants/spacing';
 
 // Showcase Item Component
 function ShowcaseItem({ title, category, backgroundColor, delay, children, isInteractive = false }: {
@@ -445,31 +446,34 @@ function UIShowcase6() {
 // Main Showcase Gallery Component
 export function ShowcaseGallery() {
   return (
-    <AnimatedSection className="min-h-screen relative shrink-0 w-full bg-gradient-to-b from-[#f7f6f3] to-[#f0f0ed]" data-section="showcase">
-      <div className="relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-[80px] items-start justify-start px-6 md:px-16 lg:px-[98px] py-8 sm:py-12 md:py-16 lg:py-[80px] relative min-h-screen">
+    <AnimatedSection 
+      className="relative w-full bg-gradient-to-b from-[#f7f6f3] to-[#f0f0ed]" 
+      data-section="showcase"
+    >
+      <div className={`mx-auto ${SPACING.maxWidth.content} ${SPACING.container.combined}`}>
+        <div className={`flex flex-col ${SPACING.gap.large} py-12 md:py-16`}>
           
           {/* Section Header */}
-          <AnimatedSection className="w-full text-center">
-            <motion.div 
-              className="font-['Lora:Medium',_sans-serif] text-3xl md:text-5xl lg:text-6xl text-[#150c0c] tracking-[-0.02em] mb-4"
+          <div className="w-full text-center space-y-4">
+            <motion.h2
+              className="font-['Lora:Medium',_sans-serif] text-3xl md:text-5xl text-[#150c0c] tracking-[-0.02em]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               Interactive Showcase
-            </motion.div>
-            <motion.div 
-              className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-lg md:text-xl lg:text-2xl text-[#7c736a] tracking-[-0.01em] max-w-2xl mx-auto"
+            </motion.h2>
+            <motion.p
+              className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-lg md:text-xl text-[#7c736a] tracking-[-0.01em] max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
               A collection of UI components, interactions, and design explorations crafted with attention to detail and user experience.
-            </motion.div>
-          </AnimatedSection>
+            </motion.p>
+          </div>
 
           {/* Showcase Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full">
@@ -528,9 +532,6 @@ export function ShowcaseGallery() {
               <UIShowcase6 />
             </ShowcaseItem>
           </div>
-
-          {/* Bottom Spacing */}
-          <div className="w-full h-20"></div>
         </div>
       </div>
     </AnimatedSection>
