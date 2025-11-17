@@ -123,7 +123,7 @@ export function PortfolioScrollIndicator() {
 
   return (
     <motion.div
-      className="fixed left-2 md:left-4 top-1/2 -translate-y-1/2 z-40"
+      className="hidden md:block fixed left-2 md:left-4 top-1/2 -translate-y-1/2 z-40"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}

@@ -1,9 +1,10 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import React, { useRef } from 'react';
 import { useSound } from '../../hooks/useSound';
-import { Briefcase, Download } from 'lucide-react';
+import { Download, Github } from 'lucide-react';
 import imgChatGptImageJul122025011140Am2 from "figma:asset/4774270e396720874460c4f8aeecbc8d19672f4e.png";
 import { AnimatedSection } from '../common/AnimatedSection';
+import { SPACING } from '../../constants/spacing';
 
 // Hero Image Components
 function Frame3() {
@@ -61,31 +62,6 @@ const HeroImageCollage = React.memo(() => {
 HeroImageCollage.displayName = 'HeroImageCollage';
 
 // CTA Buttons
-export function AvailableForWorkButton() {
-  const { playHoverSound, playSuccessSound } = useSound();
-
-  const handleClick = () => {
-    playSuccessSound();
-    window.location.href = 'mailto:petkovrichard8@gmail.com?subject=Available for Work - Let\'s Connect';
-  };
-
-  return (
-    <motion.button 
-      layout={false}
-      className="flex items-center justify-center gap-2 rounded-md h-11 px-4 py-2 text-sm font-medium leading-none transition-colors bg-[#2c1810] text-white hover:bg-[#3a2115] w-full sm:w-auto"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.95 }}
-      onMouseEnter={() => playHoverSound(1000, 120, 0.15)}
-      onClick={handleClick}
-      aria-label="Contact me - I'm available for work"
-      type="button"
-    >
-      <Briefcase className="h-4 w-4 shrink-0" aria-hidden="true" />
-      Available for work
-    </motion.button>
-  );
-}
-
 export function DownloadResumeButton() {
   const { playHoverSound, playSuccessSound } = useSound();
 
@@ -102,7 +78,7 @@ export function DownloadResumeButton() {
   return (
     <motion.button 
       layout={false}
-      className="flex items-center justify-center gap-2 rounded-md h-11 px-4 py-2 text-sm font-medium leading-none transition-colors border border-[#2c1810] text-[#2c1810] bg-white hover:bg-[#f7eee6] w-full sm:w-auto"
+      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none transition-all duration-200 border-2 border-[#2c1810] text-[#2c1810] bg-white hover:bg-[#2c1810] hover:text-white hover:shadow-md active:scale-[0.98] w-auto"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.95 }}
       onMouseEnter={() => playHoverSound(900, 120, 0.15)}
@@ -116,12 +92,31 @@ export function DownloadResumeButton() {
   );
 }
 
+export function GitHubLink() {
+  const { playHoverSound } = useSound();
+
+  return (
+    <motion.a
+      href="https://github.com/petkov120"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none bg-black text-white hover:bg-neutral-900 shadow-md shadow-black/20 transition-all duration-200 group"
+      whileHover={{ scale: 1.02 }}
+      onMouseEnter={() => playHoverSound(800, 100, 0.1)}
+      aria-label="View my GitHub profile"
+    >
+      <Github className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
+      <span className="tracking-tight">View GitHub</span>
+    </motion.a>
+  );
+}
+
 // Main Hero Section Component
 export function HeroSection() {
   return (
     <AnimatedSection
       delay={0.6}
-      className="relative pt-20 pb-32 lg:pb-48 min-h-[750px] lg:min-h-[850px] mx-auto max-w-5xl px-4 sm:px-6 lg:px-10 bg-[#f7f6f3]"
+      className={`relative pt-16 md:pt-20 pb-12 md:pb-0 mx-auto ${SPACING.maxWidth.content} ${SPACING.container.combined} bg-[#f7f6f3]`}
       data-section="hero"
       id="main-content"
       role="banner"
@@ -129,7 +124,7 @@ export function HeroSection() {
     >
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         {/* Left: Text Content */}
-        <div className="flex-1 max-w-lg space-y-6">
+        <div className="flex-1 max-w-lg flex flex-col" style={{ gap: '16px' }}>
           {/* Label */}
           <div className="text-xs sm:text-sm font-medium text-neutral-700">
             Petkov.Chakalov
@@ -141,19 +136,19 @@ export function HeroSection() {
           </h1>
           
           {/* Paragraph */}
-          <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            With 3+ years in product design and UI development, I partner with teams to craft heartfelt solutions in education, health tech, and business growth.
+          <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed">
+            I design intelligent digital products at the intersection of design, AI, and front-end engineering.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col md:flex-row gap-3">
-            <AvailableForWorkButton />
+          <div className="flex flex-col md:flex-row" style={{ gap: '16px' }}>
+            <GitHubLink />
             <DownloadResumeButton />
           </div>
         </div>
         
         {/* Right: Hero Image - Hidden on small screens */}
-        <div className="flex-1 flex items-center justify-end min-h-[500px] lg:min-h-[600px]">
+        <div className="hidden lg:flex flex-1 items-center justify-end min-h-[400px] lg:min-h-[500px] relative" style={{ padding: '16px' }}>
           <HeroImageCollage />
         </div>
       </div>

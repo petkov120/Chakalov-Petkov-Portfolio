@@ -91,8 +91,8 @@ export function ProjectCard({
             <h3 className="text-lg sm:text-xl font-semibold text-[#150c0c] tracking-tight">
               {title}
             </h3>
-            <div className="text-sm sm:text-base font-medium uppercase tracking-[0.15em] text-[#7c736a]">
-              {category} · {year}
+            <div className="text-[17px] sm:text-[19px] font-medium uppercase tracking-[0.15em] text-[#7c736a]">
+              {category} · <span className="font-bold">{year}</span>
             </div>
           </header>
           <p className="text-base sm:text-lg leading-relaxed text-[#4f3f35]">

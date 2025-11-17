@@ -465,7 +465,7 @@ function ContentContainer({ activeSection, onSectionClick }: {
           >
             {/* Active indicator line */}
             <motion.div
-              className="absolute -left-3 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 w-1 bg-[#372270] rounded-full"
+              className="absolute -left-3 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 w-1 bg-project-openxp rounded-full"
               initial={{ height: 0, opacity: 0 }}
               animate={{ 
                 height: isActive ? "60%" : 0,
@@ -521,8 +521,8 @@ function MainContainer({
 
 function Frame2067() {
   return (
-    <div className="border border-[#372270] bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
-      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-[#372270] tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
+    <div className="border border-project-openxp bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
+      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-project-openxp tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
         Case Study
       </div>
     </div>
@@ -531,8 +531,8 @@ function Frame2067() {
 
 function Frame2068() {
   return (
-    <div className="border border-[#372270] bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
-      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-[#372270] tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
+    <div className="border border-project-openxp bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
+      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-project-openxp tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
         Exam Prep Software
       </div>
     </div>
@@ -541,8 +541,8 @@ function Frame2068() {
 
 function Frame2069() {
   return (
-    <div className="border border-[#372270] bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
-      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-[#372270] tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
+    <div className="border border-project-openxp bg-white rounded-full px-3 py-1 md:px-4 md:py-2 shadow-md">
+      <div className="font-['IBM_Plex_Sans_Condensed:Regular',_sans-serif] text-xs md:text-sm lg:text-[16px] 2xl:text-[18px] text-project-openxp tracking-[-0.01em] lg:tracking-[-0.16px] 2xl:tracking-[-0.18px] whitespace-nowrap">
         AI Tools
       </div>
     </div>
@@ -752,7 +752,7 @@ function VictoryBanner() {
 function HeroImage() {
   return (
     <motion.div 
-      className="bg-[#372270] h-[280px] sm:h-[360px] md:h-[480px] lg:h-[600px] xl:h-[737px] overflow-hidden relative w-full rounded-lg shadow-lg flex items-center justify-center p-3 md:p-4 lg:p-6"
+      className="bg-project-openxp h-[280px] sm:h-[360px] md:h-[480px] lg:h-[600px] xl:h-[737px] overflow-hidden relative w-full rounded-lg shadow-lg flex items-center justify-center p-3 md:p-4 lg:p-6"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.5 }}
@@ -832,23 +832,33 @@ function Frame2075() {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:gap-[31px] items-start justify-between relative shrink-0 w-full h-full">
       <motion.div 
-        className="aspect-[4/3] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1" 
+        className="aspect-[4/3] bg-project-openxp shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1 overflow-hidden flex items-center justify-center" 
         data-name="Student Avatars" 
-        style={{ backgroundImage: `url('${imgPlaceholder1}')` }}
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: true }}
-      />
+      >
+        <ImageWithFallback
+          src={imgPlaceholder1}
+          alt="Student Avatars placeholder"
+          className="w-full h-full object-contain"
+        />
+      </motion.div>
       <motion.div 
-        className="aspect-[16/10] bg-center bg-cover bg-no-repeat shrink-0 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-md" 
+        className="aspect-[16/10] bg-project-openxp shrink-0 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-md overflow-hidden flex items-center justify-center" 
         data-name="Mobile Interface Screenshot" 
-        style={{ backgroundImage: `url('${imgPlaceholder2}')` }}
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
         viewport={{ once: true }}
-      />
+      >
+        <ImageWithFallback
+          src={imgPlaceholder2}
+          alt="Mobile Interface Screenshot placeholder"
+          className="w-full h-full object-contain"
+        />
+      </motion.div>
     </div>
   );
 }
@@ -951,27 +961,27 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 <p className="mb-2">Key constraints and goals:</p>
                 <ul className="space-y-1 pl-6 md:pl-8">
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Create an easy-to-use interface for exam preparation
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Integrate AI tools that help students make better career and subject choices
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Design for students preparing for career-defining tests
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Support multiple exam types and subjects
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Provide clear progress tracking and study organization
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     Ensure the platform works across different devices
                   </li>
                 </ul>
@@ -1016,19 +1026,19 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       AI-powered study recommendations
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Career and subject guidance
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Personalized study paths
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Progress tracking and organization
                     </li>
                   </ul>
@@ -1036,7 +1046,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
 
                 {/* AI Tutor Interface Screenshot */}
                 <motion.div 
-                  className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                  className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
@@ -1055,7 +1065,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   }}
                 >
                   <div className="relative w-full">
-                    <div className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-[#372270] flex items-center justify-center overflow-hidden">
+                    <div className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden">
                       <ImageWithFallback
                         src={imgDesignSolution1}
                         alt="Openxp interface placeholder"
@@ -1103,15 +1113,15 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Study material organization
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Progress tracking and analytics
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Exam preparation timeline management
                     </li>
                   </ul>
@@ -1120,7 +1130,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 {/* Screenshots */}
                 <div className="flex flex-col gap-4 md:gap-6 mt-4">
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -1139,7 +1149,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution2}')` }}
@@ -1170,7 +1180,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -1189,7 +1199,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution3}')` }}
@@ -1234,19 +1244,19 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Intuitive navigation and workflows
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Clean, organized interface design
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Responsive design for multiple devices
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Accessible and user-friendly interactions
                     </li>
                   </ul>
@@ -1255,7 +1265,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 {/* Screenshots */}
                 <div className="flex flex-col gap-4 md:gap-6 mt-4">
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -1274,7 +1284,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution4}')` }}
@@ -1305,7 +1315,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -1324,7 +1334,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution5}')` }}
@@ -1369,19 +1379,19 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Iterative design improvements
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       User feedback integration
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Enhanced features and functionality
                     </li>
                     <li className="relative">
-                      <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                       Improved user experience across versions
                     </li>
                   </ul>
@@ -1390,7 +1400,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 {/* Screenshots */}
                 <div className="flex flex-col gap-4 md:gap-6 mt-4">
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -1409,7 +1419,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution6}')` }}
@@ -1440,7 +1450,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
+                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -1459,7 +1469,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                     }}
                   >
                     <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-[#372270]">
+                      <div className="aspect-[4/3] w-full bg-project-openxp">
                         <div
                           className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
                           style={{ backgroundImage: `url('${imgDesignSolution7}')` }}
@@ -1514,19 +1524,19 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 </h3>
                 <ul className="space-y-1 pl-6 md:pl-8">
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Two versions developed</strong> with iterative improvements based on user feedback
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Improved exam preparation experience</strong> for students preparing for career-defining tests
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>AI-powered tools</strong> that help students make better career and subject choices
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>User-friendly interface</strong> that makes exam preparation more manageable
                   </li>
                 </ul>
@@ -1563,23 +1573,23 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 </h3>
                 <ul className="space-y-1 pl-6 md:pl-8">
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Iterative design:</strong> Developing two versions of Openxp provided valuable insights into how iterative design improves user experience and product effectiveness
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>AI tool integration:</strong> Successfully integrating AI tools that help students make better career and subject choices required careful consideration of user needs and interface design
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>User-centered design:</strong> Creating an easy-to-use interface for exam preparation required deep understanding of student needs and study workflows
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Version iteration:</strong> Leading the development of two versions taught me the importance of building on previous learnings and incorporating user feedback
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Design simplicity:</strong> Making exam preparation feel manageable and organized required careful attention to information architecture and user flows
                   </li>
                 </ul>
@@ -1587,7 +1597,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
 
               {/* What We Learnt Image */}
               <motion.div 
-                className="bg-[#372270] rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -1606,7 +1616,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 }}
               >
                 <div className="relative w-full">
-                  <div className="w-full bg-[#372270] flex items-center justify-center overflow-hidden" style={{ minHeight: '400px' }}>
+                  <div className="w-full bg-project-openxp flex items-center justify-center overflow-hidden" style={{ minHeight: '400px' }}>
                     <ImageWithFallback
                       src={imgReflectionImage}
                       alt="Openxp reflection image placeholder"
@@ -1646,15 +1656,15 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 </h3>
                 <ul className="space-y-1 pl-6 md:pl-8">
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Earlier user testing:</strong> Conducting more user testing earlier in the design process would have identified usability issues sooner
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>More diverse exam types:</strong> Testing with students preparing for different types of exams would have provided broader insights
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Enhanced AI features:</strong> Gradually introducing more advanced AI features might have improved user adoption and understanding
                   </li>
                 </ul>
@@ -1666,19 +1676,19 @@ function MainContent({ activeSection }: { activeSection: string }) {
                 </h3>
                 <ul className="space-y-1 pl-6 md:pl-8">
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Expanded exam coverage:</strong> Support more exam types and certification programs
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Enhanced AI features:</strong> Develop more advanced AI tools for personalized study recommendations
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Mobile optimization:</strong> Further optimize the mobile experience for on-the-go studying
                   </li>
                   <li className="relative">
-                    <span className="absolute -left-6 md:-left-8 text-[#372270]">•</span>
+                    <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
                     <strong>Community features:</strong> Add collaborative study features and peer support options
                   </li>
                 </ul>

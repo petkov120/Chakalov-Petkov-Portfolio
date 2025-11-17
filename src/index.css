@@ -1582,6 +1582,10 @@
     border-color: #ac83f3;
   }
 
+  .border-project-openxp {
+    border-color: var(--project-openxp);
+  }
+
   .border-amber-300 {
     border-color: var(--color-amber-300);
   }
@@ -1972,6 +1976,11 @@
     .bg-yellow-500\/20 {
       background-color: color-mix(in oklab, var(--color-yellow-500) 20%, transparent);
     }
+  }
+
+  /* Openxp Project Brand Color Utilities */
+  .bg-project-openxp {
+    background-color: var(--project-openxp);
   }
 
   .bg-gradient-to-b {
@@ -2756,6 +2765,10 @@
 
   .text-white {
     color: var(--color-white);
+  }
+
+  .text-project-openxp {
+    color: var(--project-openxp);
   }
 
   .text-white\/80 {
@@ -4745,7 +4758,7 @@
   --text-white: #fff;
   --project-treatmentpath: #ac83f3;
   --project-universityx: #9d2d9d;
-  --project-openxp: #372270;
+  --project-openxp: #281266;
   --project-customer-exp: #0d6efd;
   --project-molerhealth: #10b981;
   --project-wikipedia: #0645ad;
