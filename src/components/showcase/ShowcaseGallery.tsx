@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSound } from '../../hooks/useSound';
 import { AnimatedSection } from '../common/AnimatedSection';
 import { SPACING } from '../../constants/spacing';
@@ -77,15 +77,15 @@ function ShowcaseItem({ title, category, backgroundColor, delay, children, isInt
           onClick={() => setIsModalOpen(false)}
         >
           <motion.div
-            className="relative bg-gray-900 shadow-2xl overflow-hidden w-full h-full md:w-[375px] md:h-[667px] md:rounded-[24px]"
+            className="relative bg-white shadow-2xl overflow-hidden w-full h-full md:w-[375px] md:h-[667px] md:rounded-[24px]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 300 }}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.button
-              className="absolute top-4 right-4 z-10 bg-white/10 backdrop-blur-sm text-white w-8 h-8 rounded-full items-center justify-center hidden md:flex"
-              whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
+              className="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-gray-200 text-gray-700 w-8 h-8 rounded-full items-center justify-center hidden md:flex border border-gray-200"
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsModalOpen(false)}
             >
@@ -195,16 +195,16 @@ function InteractiveShoppingApp({ onClose }: { onClose?: () => void }) {
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="w-full h-full bg-gray-900 flex flex-col">
-      <div className="bg-black text-white px-4 py-2 flex justify-between items-center text-sm">
+    <div className="w-full h-full bg-white flex flex-col">
+      <div className="bg-gray-100 text-gray-900 px-4 py-2 flex justify-between items-center text-sm border-b border-gray-200">
         <span>9:41</span>
         {onClose && (
-          <button className="md:hidden text-lg" onClick={onClose}>←</button>
+          <button className="md:hidden text-lg text-gray-600" onClick={onClose}>←</button>
         )}
         <div className="flex gap-1">
-          <div className="w-4 h-2 bg-white rounded-sm opacity-60"></div>
-          <div className="w-4 h-2 bg-white rounded-sm opacity-40"></div>
-          <div className="w-4 h-2 bg-white rounded-sm opacity-80"></div>
+          <div className="w-4 h-2 bg-gray-400 rounded-sm opacity-60"></div>
+          <div className="w-4 h-2 bg-gray-400 rounded-sm opacity-40"></div>
+          <div className="w-4 h-2 bg-gray-400 rounded-sm opacity-80"></div>
         </div>
       </div>
       <div className="bg-white px-4 py-4 flex justify-between items-center shadow-sm">
@@ -331,40 +331,40 @@ function InteractiveShoppingApp({ onClose }: { onClose?: () => void }) {
 function UIShowcase2() {
   return (
     <div className="absolute inset-4 flex items-center justify-center">
-      <div className="bg-gray-900 rounded-2xl w-full h-full shadow-xl p-4 space-y-3 text-white">
+      <div className="bg-white rounded-2xl w-full h-full shadow-xl p-4 space-y-3 text-gray-900 border border-gray-200">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg">🤖</div>
           <div>
-            <div className="text-sm font-semibold">AI Assistant</div>
-            <div className="text-[10px] text-gray-400">Online</div>
+            <div className="text-sm font-semibold text-gray-900">AI Assistant</div>
+            <div className="text-[10px] text-gray-500">Online</div>
           </div>
-          <div className="ml-auto flex items-center gap-1 text-[10px] text-gray-400">
+          <div className="ml-auto flex items-center gap-1 text-[10px] text-gray-500">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
             Live
           </div>
         </div>
         <div className="space-y-2">
           <div className="flex justify-start">
-            <div className="bg-gray-800 rounded-2xl px-3 py-2 text-xs max-w-[80%]">
+            <div className="bg-white border border-gray-200 rounded-2xl px-3 py-2 text-xs max-w-[80%] text-gray-900">
               Hi Petkov! Need help summarizing your case study?
             </div>
           </div>
           <div className="flex justify-end">
-            <div className="bg-purple-600 rounded-2xl px-3 py-2 text-xs max-w-[80%]">
+            <div className="bg-purple-600 rounded-2xl px-3 py-2 text-xs max-w-[80%] text-white">
               Yes, highlight the conversion improvements please.
             </div>
           </div>
           <div className="flex justify-start">
-            <div className="bg-gray-800 rounded-2xl px-3 py-2 text-xs max-w-[80%]">
+            <div className="bg-white border border-gray-200 rounded-2xl px-3 py-2 text-xs max-w-[80%] text-gray-900">
               Got it! Crafting a concise summary with metrics…
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2 bg-gray-800 rounded-xl px-3 py-2 text-xs text-gray-400">
+        <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2 text-xs text-gray-500">
           <div className="flex gap-1">
-            <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" />
-            <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }} />
-            <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }} />
+            <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" />
+            <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }} />
+            <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }} />
           </div>
           AI is typing…
         </div>
@@ -408,23 +408,23 @@ function InteractiveAIChat({ onClose }: { onClose?: () => void }) {
   };
   
   return (
-    <div className="w-full h-full bg-gray-900 flex flex-col text-white">
+    <div className="w-full h-full bg-white flex flex-col text-gray-900">
       {onClose && (
-        <button className="md:hidden absolute top-4 left-4 z-10 text-lg" onClick={onClose}>←</button>
+        <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       {/* Header */}
-      <div className="bg-gray-800 px-4 py-3 flex items-center gap-3 border-b border-gray-700">
+      <div className="bg-gray-50 px-4 py-3 flex items-center gap-3 border-b border-gray-200">
         <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
           <span className="text-lg">🤖</span>
         </div>
         <div>
-          <div className="font-semibold">AI Assistant</div>
-          <div className="text-xs text-gray-400">Online</div>
+          <div className="font-semibold text-gray-900">AI Assistant</div>
+          <div className="text-xs text-gray-500">Online</div>
         </div>
       </div>
       
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
         {messages.map((msg, i) => (
           <motion.div
             key={i}
@@ -435,7 +435,7 @@ function InteractiveAIChat({ onClose }: { onClose?: () => void }) {
             <div className={`max-w-[80%] rounded-2xl px-4 py-2 ${
               msg.role === 'user' 
                 ? 'bg-purple-600 text-white' 
-                : 'bg-gray-800 text-gray-100'
+                : 'bg-white text-gray-900 border border-gray-200'
             }`}>
               {msg.text}
             </div>
@@ -447,7 +447,7 @@ function InteractiveAIChat({ onClose }: { onClose?: () => void }) {
             animate={{ opacity: 1 }}
             className="flex justify-start"
           >
-            <div className="bg-gray-800 rounded-2xl px-4 py-2">
+            <div className="bg-white rounded-2xl px-4 py-2 border border-gray-200">
               <div className="flex gap-1">
                 <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
                 <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
@@ -459,24 +459,26 @@ function InteractiveAIChat({ onClose }: { onClose?: () => void }) {
       </div>
       
       {/* Input */}
-      <form onSubmit={handleSend} className="p-4 bg-gray-800 border-t border-gray-700">
+      <form onSubmit={handleSend} className="p-4 bg-white border-t border-gray-200">
         <div className="flex gap-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-1 bg-gray-100 text-gray-900 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 border border-gray-200"
             onMouseEnter={() => playHoverSound(600, 50, 0.05)}
           />
           <motion.button
             type="submit"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onMouseEnter={() => playHoverSound(700, 100, 0.1)}
+            disabled={!input.trim()}
+            className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-6 py-2 rounded-lg font-medium flex items-center gap-2 min-w-[80px] justify-center"
+            whileHover={{ scale: input.trim() ? 1.05 : 1 }}
+            whileTap={{ scale: input.trim() ? 0.95 : 1 }}
+            onMouseEnter={() => input.trim() && playHoverSound(700, 100, 0.1)}
           >
-            Send
+            <span>Send</span>
+            <span className="text-lg">➤</span>
           </motion.button>
         </div>
       </form>
@@ -559,12 +561,12 @@ function InteractiveTaskManager({ onClose }: { onClose?: () => void }) {
   };
   
   return (
-    <div className="w-full h-full bg-gray-900 flex flex-col text-white">
+    <div className="w-full h-full bg-white flex flex-col text-gray-900">
       {onClose && (
-        <button className="md:hidden absolute top-4 left-4 z-10 text-lg" onClick={onClose}>←</button>
+        <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-2xl font-semibold mb-6">Task Manager</h3>
+        <h3 className="text-2xl font-semibold mb-6 text-gray-900">Task Manager</h3>
         
         {/* Add Task */}
         <form onSubmit={addTask} className="mb-6">
@@ -574,11 +576,11 @@ function InteractiveTaskManager({ onClose }: { onClose?: () => void }) {
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
               placeholder="Add a new task..."
-              className="flex-1 bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className="flex-1 bg-gray-100 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 border border-gray-200"
             />
             <motion.button
               type="submit"
-              className="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-lg font-medium"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onMouseEnter={() => playHoverSound(700, 100, 0.1)}
@@ -595,24 +597,24 @@ function InteractiveTaskManager({ onClose }: { onClose?: () => void }) {
               key={task.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-gray-800 rounded-lg p-4 flex items-center gap-3"
+              className="bg-gray-50 rounded-lg p-4 flex items-center gap-3 border border-gray-200"
             >
               <motion.button
                 onClick={() => toggleTask(task.id)}
                 className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
-                  task.completed ? 'bg-green-500 border-green-500' : 'border-gray-500'
+                  task.completed ? 'bg-green-500 border-green-500' : 'border-gray-300'
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 {task.completed && <span className="text-white text-xs">✓</span>}
               </motion.button>
-              <span className={`flex-1 ${task.completed ? 'line-through opacity-50' : ''}`}>
+              <span className={`flex-1 text-gray-900 ${task.completed ? 'line-through opacity-50' : ''}`}>
                 {task.text}
               </span>
               <motion.button
                 onClick={() => deleteTask(task.id)}
-                className="text-red-400 hover:text-red-500 px-2"
+                className="text-red-500 hover:text-red-600 px-2"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -622,7 +624,7 @@ function InteractiveTaskManager({ onClose }: { onClose?: () => void }) {
           ))}
         </div>
         
-        <div className="mt-4 text-sm text-gray-400 text-center">
+        <div className="mt-4 text-sm text-gray-500 text-center">
           {tasks.filter(t => !t.completed).length} tasks remaining
         </div>
       </div>
@@ -689,9 +691,9 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
   };
   
   return (
-    <div className="w-full h-full bg-gray-900 flex flex-col text-white">
+    <div className="w-full h-full bg-white flex flex-col text-gray-900">
       {onClose && (
-        <button className="md:hidden absolute top-4 left-4 z-10 text-lg" onClick={onClose}>←</button>
+        <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       <div className="p-6 flex-1 flex flex-col justify-center">
         {/* Album Art */}
@@ -705,13 +707,13 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
         
         {/* Track Info */}
         <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold mb-1">{tracks[currentTrack].title}</h3>
-          <p className="text-gray-400">{tracks[currentTrack].artist}</p>
+          <h3 className="text-xl font-semibold mb-1 text-gray-900">{tracks[currentTrack].title}</h3>
+          <p className="text-gray-500">{tracks[currentTrack].artist}</p>
         </div>
         
         {/* Progress Bar */}
         <div className="mb-6">
-          <div className="h-1 bg-gray-700 rounded-full mb-2">
+          <div className="h-1 bg-gray-200 rounded-full mb-2">
             <motion.div
               className="h-full bg-gradient-to-r from-blue-500 to-pink-500 rounded-full"
               initial={{ width: 0 }}
@@ -719,7 +721,7 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
               transition={{ duration: 0.3 }}
             />
           </div>
-          <div className="flex justify-between text-xs text-gray-400">
+          <div className="flex justify-between text-xs text-gray-500">
             <span>1:23</span>
             <span>{tracks[currentTrack].duration}</span>
           </div>
@@ -729,7 +731,7 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
         <div className="flex items-center justify-center gap-4 mb-6">
           <motion.button
             onClick={prevTrack}
-            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center"
+            className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 border border-gray-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onMouseEnter={() => playHoverSound(600, 50, 0.05)}
@@ -747,7 +749,7 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
           </motion.button>
           <motion.button
             onClick={nextTrack}
-            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center"
+            className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 border border-gray-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onMouseEnter={() => playHoverSound(600, 50, 0.05)}
@@ -758,16 +760,16 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
         
         {/* Volume */}
         <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-400">🔊</span>
+          <span className="text-sm text-gray-500">🔊</span>
           <input
             type="range"
             min="0"
             max="100"
             value={volume}
             onChange={(e) => setVolume(Number(e.target.value))}
-            className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+            className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
           />
-          <span className="text-sm text-gray-400 w-10">{volume}%</span>
+          <span className="text-sm text-gray-500 w-10">{volume}%</span>
         </div>
       </div>
     </div>
@@ -784,22 +786,24 @@ function UIShowcase5() {
   ];
   return (
     <div className="absolute inset-4 flex flex-col justify-center">
-      <div className="bg-gray-900 rounded-2xl p-4 shadow-xl w-full h-full flex flex-col text-white">
-        <div className="bg-gray-800 rounded-xl p-3 mb-3 text-right">
-          <div className="text-lg font-mono">12,348.56</div>
+      <div className="bg-white rounded-2xl p-4 shadow-xl w-full h-full flex flex-col text-gray-900">
+        <div className="bg-gray-100 rounded-xl p-3 mb-3 text-right border border-gray-200">
+          <div className="text-lg font-mono text-gray-900">12,348.56</div>
           <div className="text-xs text-gray-500">+ 452 × 18</div>
         </div>
-        <div className="grid grid-cols-4 gap-2 text-sm font-semibold">
+        <div 
+          className="grid grid-cols-4 text-sm font-semibold"
+          style={{ rowGap: '16px', columnGap: '0.5rem' }}
+        >
           {keypad.map((key, idx) => (
             key ? (
               <div
                 key={idx}
-                className={`h-10 rounded-xl flex items-center justify-center ${
-                  key === '=' ? 'bg-green-500 text-white' :
-                  key === 'C' ? 'bg-red-500/30 text-red-300' :
-                  '÷×-+'.includes(key) ? 'bg-gray-800 text-pink-300' :
-                  key === '⌫' ? 'bg-gray-800 text-gray-300' :
-                  'bg-gray-800/80 text-white'
+                className={`h-12 rounded-xl flex items-center justify-center border shadow-sm ${
+                  key === '=' ? 'bg-green-500 text-white border-green-600' :
+                  key === 'C' ? 'bg-red-100 text-red-600 border-red-200' :
+                  '÷×-+⌫'.includes(key) ? 'bg-blue-50 text-blue-600 border-blue-100' :
+                  'bg-white text-gray-800 border-gray-200'
                 }`}
               >
                 {key}
@@ -905,32 +909,53 @@ function InteractiveCalculator({ onClose }: { onClose?: () => void }) {
       {onClose && (
         <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
-      <div className="p-6 flex-1 flex flex-col justify-center">
-        {/* Display */}
-        <div className="bg-gray-100 rounded-xl p-6 mb-6 text-right shadow-inner border border-gray-200">
-          <div className="text-3xl font-mono font-semibold text-gray-900 overflow-x-auto">
-            {display}
-          </div>
-          {operation && previousValue !== null && (
-            <div className="text-sm text-gray-500 mt-1">
-              {previousValue} {operation}
+      <div className="p-6 flex-1 flex flex-col items-center">
+        <div className="w-full max-w-sm mt-4">
+          {/* Display */}
+          <div className="bg-gray-100 rounded-xl p-6 mb-6 text-right shadow-inner border border-gray-200">
+            <div className="text-3xl font-mono font-semibold text-gray-900 overflow-x-auto">
+              {display}
             </div>
-          )}
-        </div>
-        
-        {/* Keypad Container */}
-        <div className="w-full grid grid-cols-4 gap-2">
-          {buttonConfigs.map((btn, i) => (
-            <motion.button
-              key={i}
-              onClick={btn.action}
-              className={`${btn.className} ${btn.span || ''} w-full flex items-center justify-center h-12 rounded-xl font-semibold text-lg transition-colors shadow-sm`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {btn.label}
-            </motion.button>
-          ))}
+            {operation && previousValue !== null && (
+              <div className="text-sm text-gray-500 mt-1">
+                {previousValue} {operation}
+              </div>
+            )}
+          </div>
+          
+          {/* Keypad Container - Traditional 4-column calculator layout */}
+          <div 
+            className="w-full"
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(4, 1fr)', 
+              rowGap: '16px',
+              columnGap: '0.5rem',
+              width: '100%'
+            }}
+          >
+            {buttonConfigs.map((btn, i) => {
+              const colSpan = btn.span?.includes('col-span-2') ? 2 : 1;
+              const rowSpan = btn.span?.includes('row-span-2') ? 2 : 1;
+              return (
+                <motion.button
+                  key={i}
+                  onClick={btn.action}
+                  className={`${btn.className} flex items-center justify-center h-20 rounded-xl font-semibold text-lg transition-colors shadow-sm`}
+                  style={{ 
+                    gridColumn: `span ${colSpan}`,
+                    gridRow: `span ${rowSpan}`,
+                    width: '100%',
+                    display: 'block'
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {btn.label}
+                </motion.button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
@@ -971,85 +996,139 @@ function UIShowcase6() {
 
 function InteractiveSearch({ onClose }: { onClose?: () => void }) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<Array<{ title: string, description: string, category: string }>>([]);
+  const [results, setResults] = useState<Array<{ title: string, description: string, category: string, icon: string }>>([]);
   const [isSearching, setIsSearching] = useState(false);
   const { playHoverSound, playSuccessSound } = useSound();
   
-  const mockResults = [
-    { title: "React Design Patterns", description: "Best practices for building scalable React applications", category: "Development" },
-    { title: "UI/UX Design Principles", description: "Essential design guidelines for modern interfaces", category: "Design" },
-    { title: "Motion Design Guide", description: "Creating smooth animations and transitions", category: "Design" },
-    { title: "TypeScript Advanced", description: "Deep dive into TypeScript features and patterns", category: "Development" }
+  const allItems = [
+    { title: "React Design Patterns", description: "Best practices for building scalable React applications", category: "Development", icon: "⚛️" },
+    { title: "UI/UX Design Principles", description: "Essential design guidelines for modern interfaces", category: "Design", icon: "🎨" },
+    { title: "Motion Design Guide", description: "Creating smooth animations and transitions", category: "Design", icon: "✨" },
+    { title: "TypeScript Advanced", description: "Deep dive into TypeScript features and patterns", category: "Development", icon: "📘" },
+    { title: "Portfolio Projects", description: "Showcase of interactive prototypes and case studies", category: "Portfolio", icon: "💼" },
+    { title: "Component Library", description: "Reusable UI components and design system", category: "Design", icon: "🧩" }
   ];
+  
+  // Show all items initially
+  useEffect(() => {
+    setResults(allItems);
+  }, []);
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!query.trim()) return;
-    
     setIsSearching(true);
     playSuccessSound();
     
     // Simulate search delay
     setTimeout(() => {
-      const filtered = mockResults.filter(item =>
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.description.toLowerCase().includes(query.toLowerCase())
-      );
-      setResults(filtered.length > 0 ? filtered : mockResults);
+      if (!query.trim()) {
+        setResults(allItems);
+      } else {
+        const filtered = allItems.filter(item =>
+          item.title.toLowerCase().includes(query.toLowerCase()) ||
+          item.description.toLowerCase().includes(query.toLowerCase()) ||
+          item.category.toLowerCase().includes(query.toLowerCase())
+        );
+        setResults(filtered.length > 0 ? filtered : []);
+      }
       setIsSearching(false);
-    }, 800);
+    }, 600);
   };
   
+  // Real-time search as user types
+  useEffect(() => {
+    if (query.trim()) {
+      setIsSearching(true);
+      const timer = setTimeout(() => {
+        const filtered = allItems.filter(item =>
+          item.title.toLowerCase().includes(query.toLowerCase()) ||
+          item.description.toLowerCase().includes(query.toLowerCase()) ||
+          item.category.toLowerCase().includes(query.toLowerCase())
+        );
+        setResults(filtered.length > 0 ? filtered : []);
+        setIsSearching(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    } else {
+      setResults(allItems);
+    }
+  }, [query]);
+  
   return (
-    <div className="w-full h-full bg-gray-900 flex flex-col text-white">
+    <div className="w-full h-full bg-white flex flex-col text-gray-900">
       {onClose && (
-        <button className="md:hidden absolute top-4 left-4 z-10 text-lg" onClick={onClose}>←</button>
+        <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-2xl font-semibold mb-6">Search Interface</h3>
+        <h3 className="text-2xl font-semibold mb-2 text-gray-900">Search Knowledge Base</h3>
+        <p className="text-sm text-gray-500 mb-6">Find articles, guides, and resources</p>
         
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="mb-6">
-          <div className="relative">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search for anything..."
-              className="w-full bg-gray-800 text-white px-4 py-3 pl-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-              onMouseEnter={() => playHoverSound(600, 50, 0.05)}
-            />
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
-            {isSearching && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2"
-              >
-                <div className="w-5 h-5 border-2 border-pink-500 border-t-transparent rounded-full animate-spin"></div>
-              </motion.div>
-            )}
+          <div className="relative flex gap-2">
+            <div className="relative flex-1">
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Try: 'design', 'react'..."
+                className="w-full bg-gray-100 text-gray-900 px-4 py-3 pl-10 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 border border-gray-200 truncate"
+                onMouseEnter={() => playHoverSound(600, 50, 0.05)}
+              />
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">🔍</span>
+              {isSearching && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                >
+                  <div className="w-5 h-5 border-2 border-pink-500 border-t-transparent rounded-full animate-spin"></div>
+                </motion.div>
+              )}
+            </div>
+            <motion.button
+              type="submit"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 whitespace-nowrap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onMouseEnter={() => playHoverSound(700, 100, 0.1)}
+            >
+              Search
+            </motion.button>
           </div>
         </form>
         
         {/* Results */}
         <div className="flex-1 overflow-y-auto space-y-3">
-          {results.map((result, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 cursor-pointer transition-colors"
-              onClick={() => playHoverSound(600, 100, 0.1)}
-            >
-              <div className="flex items-start justify-between mb-2">
-                <h4 className="font-semibold text-lg">{result.title}</h4>
-                <span className="text-xs bg-pink-500/20 text-pink-400 px-2 py-1 rounded">{result.category}</span>
-              </div>
-              <p className="text-sm text-gray-400">{result.description}</p>
-            </motion.div>
-          ))}
+          {results.length === 0 ? (
+            <div className="text-center py-12">
+              <span className="text-4xl mb-4 block">🔍</span>
+              <p className="text-gray-500">No results found for "{query}"</p>
+              <p className="text-sm text-gray-400 mt-2">Try a different search term</p>
+            </div>
+          ) : (
+            results.map((result, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 cursor-pointer transition-colors border border-gray-200"
+                onClick={() => playHoverSound(600, 100, 0.1)}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{result.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-1">
+                      <h4 className="font-semibold text-lg text-gray-900">{result.title}</h4>
+                      <span className="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded whitespace-nowrap ml-2">{result.category}</span>
+                    </div>
+                    <p className="text-sm text-gray-600">{result.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))
+          )}
         </div>
       </div>
     </div>
