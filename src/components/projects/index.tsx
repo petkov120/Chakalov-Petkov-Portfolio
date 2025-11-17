@@ -45,7 +45,7 @@ export function OpenxpProject({ onViewCaseStudy }: { onViewCaseStudy: () => void
       year="2024"
       description="Openxp is an exam prep software designed to help you get ready for those big career-defining tests. The aim was to create an easy-to-use app for exam preparation. With AI tools, students can easily make better choices about their careers and subjects. I even led the development of two versions of this app!"
       imageSrc={imgImage17}
-      backgroundColor="#372270"
+      backgroundColor="#281266"
       onViewCaseStudy={onViewCaseStudy}
       dataSection="openxp"
     />
