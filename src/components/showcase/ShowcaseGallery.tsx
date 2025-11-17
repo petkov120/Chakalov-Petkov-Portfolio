@@ -696,13 +696,31 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
         <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       <div className="p-6 flex-1 flex flex-col justify-center">
-        {/* Album Art */}
+        {/* Rotating Music Disc */}
         <motion.div
-          className="w-full max-w-xs mx-auto mb-8 aspect-square bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-2xl flex items-center justify-center"
+          className="w-full max-w-xs mx-auto mb-8 aspect-square flex items-center justify-center"
           animate={{ rotate: isPlaying ? 360 : 0 }}
           transition={{ duration: 20, repeat: isPlaying ? Infinity : 0, ease: "linear" }}
         >
-          <span className="text-6xl">🎵</span>
+          <div className="relative w-full max-w-[280px] aspect-square">
+            {/* Outer disc */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl border-4 border-gray-700">
+              {/* Concentric circles for vinyl effect */}
+              <div className="absolute inset-4 rounded-full border-2 border-gray-600/30"></div>
+              <div className="absolute inset-8 rounded-full border border-gray-600/20"></div>
+              <div className="absolute inset-12 rounded-full border border-gray-600/15"></div>
+              <div className="absolute inset-16 rounded-full border border-gray-600/10"></div>
+              
+              {/* Center hole */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 shadow-inner"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black"></div>
+              
+              {/* Label area with gradient */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
+                <span className="text-2xl">🎵</span>
+              </div>
+            </div>
+          </div>
         </motion.div>
         
         {/* Track Info */}
