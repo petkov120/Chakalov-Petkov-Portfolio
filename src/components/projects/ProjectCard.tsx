@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import React from 'react';
 import { useSound } from '../../hooks/useSound';
-import { SPACING } from '../../constants/spacing';
+import { SPACING } from '../../constants/spacing.js';
 
 interface ProjectCardProps {
   title: string;

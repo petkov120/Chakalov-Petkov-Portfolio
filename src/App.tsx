@@ -13,7 +13,7 @@ import {
   WikipediaProject
 } from './components/projects';
 import { ShowcaseGallery } from './components/showcase/ShowcaseGallery';
-import { SPACING } from './constants/spacing';
+import { SPACING } from './constants/spacing.js';
 
 // Memoized Portfolio Page Component for better performance
 const PortfolioPage = React.memo<{ onViewCaseStudy: (caseStudy: string) => void }>(({ onViewCaseStudy }) => {

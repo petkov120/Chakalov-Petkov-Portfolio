@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import React, { useState, useEffect } from 'react';
 import { useSound } from '../../hooks/useSound';
 import { AnimatedSection } from '../common/AnimatedSection';
-import { SPACING } from '../../constants/spacing';
+import { SPACING } from '../../constants/spacing.js';
 
 // Showcase Item Component
 function ShowcaseItem({ title, category, backgroundColor, delay, children, isInteractive = false, interactiveComponent }: {
