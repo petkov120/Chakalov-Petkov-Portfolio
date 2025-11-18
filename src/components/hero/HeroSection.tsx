@@ -65,14 +65,25 @@ HeroImageCollage.displayName = 'HeroImageCollage';
 export function DownloadResumeButton() {
   const { playHoverSound, playSuccessSound } = useSound();
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     playSuccessSound();
-    const link = document.createElement('a');
-    link.href = '#'; // Replace with actual resume URL
-    link.download = 'Petkov_Richard_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Dynamically import the PDF generation function
+      const { generateResumePDF } = await import('../resume/ResumePDF');
+      await generateResumePDF(
+        () => {
+          // Download started
+        },
+        () => {
+          // Download complete
+          playSuccessSound();
+        }
+      );
+    } catch (error) {
+      console.error('Error generating resume PDF:', error);
+      // Fallback: show error message
+      alert('Error generating resume. Please try again.');
+    }
   };
 
   return (

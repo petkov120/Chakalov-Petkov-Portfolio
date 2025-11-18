@@ -14,6 +14,7 @@ import imgPersonalLearning from "../assets/Personal-Learning.webp";
 import imgAITutorLearning from "../assets/AI-Tutor-learning-Video.webp";
 import imgByteLearning from "../assets/Byte-Learning.webp";
 import imgTestEnvironment from "../assets/Test-environment.webp";
+import imgContext from "../assets/Context.png";
 
 // Design Solution images - mapped to actual interface screenshots
 const imgDesignSolution1 = imgAITutorLearning; // AI Tutor Interface
@@ -836,7 +837,7 @@ function Frame2074() {
       </motion.div>
       
       <motion.div 
-        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full lg:max-w-[480px]"
+        className="font-['Inter:Regular',_'Noto_Sans_JP:Regular',_sans-serif] font-normal relative shrink-0 text-sm md:text-base lg:text-lg xl:text-[20px] 2xl:text-[24px] text-black tracking-[-0.01em] md:tracking-[-0.02em] lg:tracking-[-0.2px] xl:tracking-[-0.24px] w-full"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
@@ -847,126 +848,6 @@ function Frame2074() {
   );
 }
 
-// Graphical Interpretation Component for Context & Opportunity
-function ContextOpportunityIllustration() {
-  return (
-    <motion.div 
-      className="w-full h-full flex items-center justify-center p-6 md:p-8"
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      viewport={{ once: true }}
-    >
-      <svg 
-        viewBox="0 0 600 400" 
-        className="w-full h-full max-w-full"
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          {/* Gradients */}
-          <linearGradient id="studentGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#ac83f3" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#ac83f3" stopOpacity="0.1" />
-          </linearGradient>
-          <linearGradient id="challengeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#ef4444" stopOpacity="0.2" />
-          </linearGradient>
-          <linearGradient id="opportunityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
-          </linearGradient>
-          <radialGradient id="aiGlow" cx="50%" cy="50%">
-            <stop offset="0%" stopColor="#ac83f3" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#ac83f3" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-
-        {/* Background */}
-        <rect width="600" height="400" fill="url(#studentGradient)" rx="12" />
-
-        {/* Left Side - Challenges (Traditional Study Methods) */}
-        <g opacity="0.7">
-          {/* Student figure - stressed */}
-          <circle cx="120" cy="120" r="25" fill="#ac83f3" opacity="0.3" />
-          <rect x="105" y="145" width="30" height="40" rx="15" fill="#ac83f3" opacity="0.3" />
-          {/* Books/Study materials scattered */}
-          <rect x="80" y="200" width="25" height="30" rx="3" fill="#f59e0b" opacity="0.4" transform="rotate(-15 92.5 215)" />
-          <rect x="140" y="210" width="25" height="30" rx="3" fill="#ef4444" opacity="0.4" transform="rotate(20 152.5 225)" />
-          <rect x="100" y="240" width="25" height="30" rx="3" fill="#f59e0b" opacity="0.4" transform="rotate(-10 112.5 255)" />
-          {/* Confusion lines */}
-          <path d="M 95 100 Q 85 90, 75 100 Q 85 110, 95 100" stroke="#6b7280" strokeWidth="2" fill="none" opacity="0.5" />
-          <path d="M 145 95 Q 155 85, 165 95 Q 155 105, 145 95" stroke="#6b7280" strokeWidth="2" fill="none" opacity="0.5" />
-        </g>
-
-        {/* Center - Transition/Arrow */}
-        <g>
-          <line x1="250" y1="200" x2="350" y2="200" stroke="#ac83f3" strokeWidth="4" strokeLinecap="round" opacity="0.8">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
-          </line>
-          <polygon points="350,200 340,190 340,210" fill="#ac83f3" opacity="0.8">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
-          </polygon>
-        </g>
-
-        {/* Right Side - Opportunity (AI-Powered Solution) */}
-        <g opacity="0.8">
-          {/* Student figure - confident */}
-          <circle cx="480" cy="120" r="25" fill="#10b981" opacity="0.4" />
-          <rect x="465" y="145" width="30" height="40" rx="15" fill="#10b981" opacity="0.4" />
-          {/* Organized study materials */}
-          <rect x="440" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
-          <rect x="475" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
-          <rect x="510" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
-          {/* AI/Technology elements */}
-          <circle cx="480" cy="80" r="20" fill="url(#aiGlow)" />
-          <path d="M 470 80 L 475 85 L 490 70 L 485 65 Z" fill="#ac83f3" opacity="0.8" />
-          {/* Progress indicator */}
-          <rect x="450" y="250" width="60" height="8" rx="4" fill="#e5e7eb" opacity="0.5" />
-          <rect x="450" y="250" width="45" height="8" rx="4" fill="#10b981" opacity="0.8">
-            <animate attributeName="width" values="0;45;45" dur="1.5s" begin="0.5s" fill="freeze" />
-          </rect>
-          {/* Success checkmark */}
-          <path d="M 505 254 L 510 259 L 520 249" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        </g>
-
-        {/* Labels */}
-        <text x="120" y="280" fontSize="14" fill="#6b7280" fontWeight="500" textAnchor="middle" opacity="0.7">
-          Traditional Challenges
-        </text>
-        <text x="480" y="280" fontSize="14" fill="#6b7280" fontWeight="500" textAnchor="middle" opacity="0.7">
-          AI-Powered Solution
-        </text>
-
-        {/* Decorative elements */}
-        <circle cx="300" cy="50" r="3" fill="#ac83f3" opacity="0.3">
-          <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="320" cy="350" r="3" fill="#ac83f3" opacity="0.3">
-          <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite" />
-        </circle>
-      </svg>
-    </motion.div>
-  );
-}
-
-function Frame2075() {
-  return (
-    <div className="flex flex-col gap-4 md:gap-6 lg:gap-[31px] items-start justify-between relative shrink-0 w-full h-full">
-      <motion.div 
-        className="aspect-[4/3] bg-gradient-to-br from-purple-50 to-purple-100/50 shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1 overflow-hidden border border-purple-200/30" 
-        data-name="Context Illustration" 
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <ContextOpportunityIllustration />
-      </motion.div>
-    </div>
-  );
-}
 
 function ContextOpportunitySection() {
   return (
@@ -977,23 +858,25 @@ function ContextOpportunitySection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
     >
-      {/* Mobile/Tablet Layout - Stacked */}
-      <div className="lg:hidden">
-        <Frame2074 />
-        <div className="mt-6">
-          <Frame2075 />
+      {/* Text Content - Full Width */}
+      <Frame2074 />
+      
+      {/* Context Image - Below Text */}
+      <motion.div 
+        className="w-full mt-6 md:mt-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className="w-full rounded-lg overflow-hidden shadow-lg border border-gray-100">
+          <ImageWithFallback
+            src={imgContext}
+            alt="Context and Opportunity illustration showing the transition from traditional study challenges to AI-powered solutions"
+            className="w-full h-auto object-contain"
+          />
         </div>
-      </div>
-
-      {/* Desktop Layout - Side by Side (Newspaper Style) */}
-      <div className="hidden lg:flex gap-6 xl:gap-[18px] items-start justify-start relative w-full min-h-[600px]">
-        <div className="flex-1 max-w-[55%] flex flex-col h-full">
-          <Frame2074 />
-        </div>
-        <div className="flex-1 max-w-[45%] flex flex-col h-full">
-          <Frame2075 />
-        </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
