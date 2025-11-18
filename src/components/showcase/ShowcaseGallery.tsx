@@ -663,6 +663,46 @@ function UIShowcase4() {
   );
 }
 
+// RotatingDisc Component
+function RotatingDisc() {
+  return (
+    <motion.div
+      className="relative w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-pink-500 shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+    >
+      {/* Inner circle with radial gradient for CD surface */}
+      <div 
+        className="absolute inset-2 rounded-full"
+        style={{
+          background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%, transparent 50%, rgba(0,0,0,0.2) 100%)',
+          boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.3), inset 0 -2px 8px rgba(255,255,255,0.2)'
+        }}
+      >
+        {/* Concentric rings for CD effect */}
+        <div className="absolute inset-4 rounded-full border border-white/10"></div>
+        <div className="absolute inset-6 rounded-full border border-white/5"></div>
+      </div>
+      
+      {/* White highlight (gloss effect) */}
+      <div 
+        className="absolute top-2 left-4 w-16 h-8 rounded-full blur-md opacity-60"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, transparent 70%)'
+        }}
+      ></div>
+      
+      {/* Center hole */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/80 z-10"
+        style={{
+          boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.3)'
+        }}
+      ></div>
+    </motion.div>
+  );
+}
+
 function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
@@ -696,32 +736,10 @@ function InteractiveMusicPlayer({ onClose }: { onClose?: () => void }) {
         <button className="md:hidden absolute top-4 left-4 z-10 text-lg text-gray-600" onClick={onClose}>←</button>
       )}
       <div className="p-6 flex-1 flex flex-col justify-center">
-        {/* Rotating Music Disc */}
-        <motion.div
-          className="w-full max-w-xs mx-auto mb-8 aspect-square flex items-center justify-center"
-          animate={{ rotate: isPlaying ? 360 : 0 }}
-          transition={{ duration: 20, repeat: isPlaying ? Infinity : 0, ease: "linear" }}
-        >
-          <div className="relative w-full max-w-[280px] aspect-square">
-            {/* Outer disc */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl border-4 border-gray-700">
-              {/* Concentric circles for vinyl effect */}
-              <div className="absolute inset-4 rounded-full border-2 border-gray-600/30"></div>
-              <div className="absolute inset-8 rounded-full border border-gray-600/20"></div>
-              <div className="absolute inset-12 rounded-full border border-gray-600/15"></div>
-              <div className="absolute inset-16 rounded-full border border-gray-600/10"></div>
-              
-              {/* Center hole */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 shadow-inner"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black"></div>
-              
-              {/* Label area with gradient */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🎵</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        {/* Rotating Disc */}
+        <div className="w-full flex items-center justify-center mb-8">
+          <RotatingDisc />
+        </div>
         
         {/* Track Info */}
         <div className="text-center mb-8">

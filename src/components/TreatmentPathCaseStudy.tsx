@@ -13,6 +13,16 @@ import imgTreatmentPathHero from "figma:asset/23a18e1b36e71291ecc500711318a906c5
 import HomeSmile from "../imports/HomeSmile-46-392";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+const CASE_STUDY_SECTION_IDS = [
+  "introduction",
+  "context-opportunity",
+  "constraints-goals",
+  "design-solution",
+  "outcome",
+  "reflection-steps",
+  "key-takeaways",
+];
+
 interface TreatmentPathCaseStudyProps {
   onClose: () => void;
 }
@@ -1428,7 +1438,7 @@ export default function TreatmentPathCaseStudy({ onClose }: TreatmentPathCaseStu
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = React.useCallback((sectionId: string) => {
     // Disable intersection observer during manual navigation
     setIsNavigating(true);
     setActiveSection(sectionId);
@@ -1467,7 +1477,75 @@ export default function TreatmentPathCaseStudy({ onClose }: TreatmentPathCaseStu
       // If element not found, reset immediately
       setIsNavigating(false);
     }
-  };
+  }, [setActiveSection, setIsNavigating]);
+
+  React.useEffect(() => {
+    const supportedKeys = new Set([
+      "ArrowDown",
+      "ArrowUp",
+      "PageDown",
+      "PageUp",
+      "Home",
+      "End",
+    ]);
+
+    const handleKeyNavigation = (event: KeyboardEvent) => {
+      if (!supportedKeys.has(event.key)) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      if (target) {
+        const tagName = target.tagName?.toLowerCase();
+        if (
+          tagName &&
+          (tagName === "input" ||
+            tagName === "textarea" ||
+            tagName === "select" ||
+            target.isContentEditable)
+        ) {
+          return;
+        }
+        if (target.getAttribute("role") === "textbox") {
+          return;
+        }
+      }
+
+      const currentIndex = CASE_STUDY_SECTION_IDS.indexOf(activeSection);
+      if (currentIndex === -1) {
+        return;
+      }
+
+      let nextIndex = currentIndex;
+      switch (event.key) {
+        case "ArrowDown":
+        case "PageDown":
+          nextIndex = Math.min(
+            CASE_STUDY_SECTION_IDS.length - 1,
+            currentIndex + 1
+          );
+          break;
+        case "ArrowUp":
+        case "PageUp":
+          nextIndex = Math.max(0, currentIndex - 1);
+          break;
+        case "Home":
+          nextIndex = 0;
+          break;
+        case "End":
+          nextIndex = CASE_STUDY_SECTION_IDS.length - 1;
+          break;
+      }
+
+      if (nextIndex !== currentIndex) {
+        event.preventDefault();
+        scrollToSection(CASE_STUDY_SECTION_IDS[nextIndex]);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNavigation);
+    return () => window.removeEventListener("keydown", handleKeyNavigation);
+  }, [activeSection, scrollToSection]);
 
   // Update active section based on scroll position
   React.useEffect(() => {

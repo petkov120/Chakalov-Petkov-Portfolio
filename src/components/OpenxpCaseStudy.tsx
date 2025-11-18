@@ -9,16 +9,31 @@ const imgPlaceholder3 = imgImage17;
 import HomeSmile from "../imports/HomeSmile-46-392";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 // Design Solution images
+import imgHomeDashboard from "../assets/Home-Dashboard.webp";
+import imgPersonalLearning from "../assets/Personal-Learning.webp";
+import imgAITutorLearning from "../assets/AI-Tutor-learning-Video.webp";
+import imgByteLearning from "../assets/Byte-Learning.webp";
+import imgTestEnvironment from "../assets/Test-environment.webp";
 
-// Placeholder images for design solution sections
-const imgDesignSolution1 = imgImage17;
-const imgDesignSolution2 = imgImage17;
-const imgDesignSolution3 = imgImage17;
-const imgDesignSolution4 = imgImage17;
-const imgDesignSolution5 = imgImage17;
-const imgDesignSolution6 = imgImage17;
-const imgDesignSolution7 = imgImage17;
+// Design Solution images - mapped to actual interface screenshots
+const imgDesignSolution1 = imgAITutorLearning; // AI Tutor Interface
+const imgDesignSolution2 = imgByteLearning; // Lesson Learning Interface
+const imgDesignSolution3 = imgTestEnvironment; // Test Environment
+const imgDesignSolution4 = imgPersonalLearning; // Personal Learning Setup
+const imgDesignSolution5 = imgHomeDashboard; // Home Dashboard
+const imgDesignSolution6 = imgImage17; // Keep placeholder for now
+const imgDesignSolution7 = imgImage17; // Keep placeholder for now
 const imgReflectionImage = imgImage17;
+
+const CASE_STUDY_SECTION_IDS = [
+  "introduction",
+  "context-opportunity",
+  "constraints-goals",
+  "design-solution",
+  "outcome",
+  "reflection-steps",
+  "key-takeaways",
+];
 
 interface OpenxpCaseStudyProps {
   onClose: () => void;
@@ -795,6 +810,10 @@ function IntroductionSection() {
         <p>Openxp is an exam prep software designed to help students prepare for career-defining tests. The platform combines AI tools with intuitive design to create an easy-to-use application for exam preparation. This project focused on creating a solution that helps students make better choices about their careers and subjects through personalized learning experiences.</p>
 
         <InsightCallout>
+          <strong>Hackathon Achievement:</strong> The Openxp project gained recognition through participation in several hackathons, including lablab NEXT, where we achieved a significant milestone by placing in the top 30 out of over 5,000 applicants. This achievement validated our approach to solving real problems with thoughtful design and demonstrated the platform's potential impact on exam preparation.
+        </InsightCallout>
+
+        <InsightCallout>
           <strong>Project Overview:</strong> Leading the design and development of two versions of Openxp provided valuable experience in iterative design and user-centered development. The platform addresses the challenge of exam preparation by providing students with AI-powered tools that make studying more effective and engaging.
         </InsightCallout>
 
@@ -828,36 +847,122 @@ function Frame2074() {
   );
 }
 
+// Graphical Interpretation Component for Context & Opportunity
+function ContextOpportunityIllustration() {
+  return (
+    <motion.div 
+      className="w-full h-full flex items-center justify-center p-6 md:p-8"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      viewport={{ once: true }}
+    >
+      <svg 
+        viewBox="0 0 600 400" 
+        className="w-full h-full max-w-full"
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          {/* Gradients */}
+          <linearGradient id="studentGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#ac83f3" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#ac83f3" stopOpacity="0.1" />
+          </linearGradient>
+          <linearGradient id="challengeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#ef4444" stopOpacity="0.2" />
+          </linearGradient>
+          <linearGradient id="opportunityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+          </linearGradient>
+          <radialGradient id="aiGlow" cx="50%" cy="50%">
+            <stop offset="0%" stopColor="#ac83f3" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#ac83f3" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Background */}
+        <rect width="600" height="400" fill="url(#studentGradient)" rx="12" />
+
+        {/* Left Side - Challenges (Traditional Study Methods) */}
+        <g opacity="0.7">
+          {/* Student figure - stressed */}
+          <circle cx="120" cy="120" r="25" fill="#ac83f3" opacity="0.3" />
+          <rect x="105" y="145" width="30" height="40" rx="15" fill="#ac83f3" opacity="0.3" />
+          {/* Books/Study materials scattered */}
+          <rect x="80" y="200" width="25" height="30" rx="3" fill="#f59e0b" opacity="0.4" transform="rotate(-15 92.5 215)" />
+          <rect x="140" y="210" width="25" height="30" rx="3" fill="#ef4444" opacity="0.4" transform="rotate(20 152.5 225)" />
+          <rect x="100" y="240" width="25" height="30" rx="3" fill="#f59e0b" opacity="0.4" transform="rotate(-10 112.5 255)" />
+          {/* Confusion lines */}
+          <path d="M 95 100 Q 85 90, 75 100 Q 85 110, 95 100" stroke="#6b7280" strokeWidth="2" fill="none" opacity="0.5" />
+          <path d="M 145 95 Q 155 85, 165 95 Q 155 105, 145 95" stroke="#6b7280" strokeWidth="2" fill="none" opacity="0.5" />
+        </g>
+
+        {/* Center - Transition/Arrow */}
+        <g>
+          <line x1="250" y1="200" x2="350" y2="200" stroke="#ac83f3" strokeWidth="4" strokeLinecap="round" opacity="0.8">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+          </line>
+          <polygon points="350,200 340,190 340,210" fill="#ac83f3" opacity="0.8">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+          </polygon>
+        </g>
+
+        {/* Right Side - Opportunity (AI-Powered Solution) */}
+        <g opacity="0.8">
+          {/* Student figure - confident */}
+          <circle cx="480" cy="120" r="25" fill="#10b981" opacity="0.4" />
+          <rect x="465" y="145" width="30" height="40" rx="15" fill="#10b981" opacity="0.4" />
+          {/* Organized study materials */}
+          <rect x="440" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
+          <rect x="475" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
+          <rect x="510" y="200" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.4" />
+          {/* AI/Technology elements */}
+          <circle cx="480" cy="80" r="20" fill="url(#aiGlow)" />
+          <path d="M 470 80 L 475 85 L 490 70 L 485 65 Z" fill="#ac83f3" opacity="0.8" />
+          {/* Progress indicator */}
+          <rect x="450" y="250" width="60" height="8" rx="4" fill="#e5e7eb" opacity="0.5" />
+          <rect x="450" y="250" width="45" height="8" rx="4" fill="#10b981" opacity="0.8">
+            <animate attributeName="width" values="0;45;45" dur="1.5s" begin="0.5s" fill="freeze" />
+          </rect>
+          {/* Success checkmark */}
+          <path d="M 505 254 L 510 259 L 520 249" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        </g>
+
+        {/* Labels */}
+        <text x="120" y="280" fontSize="14" fill="#6b7280" fontWeight="500" textAnchor="middle" opacity="0.7">
+          Traditional Challenges
+        </text>
+        <text x="480" y="280" fontSize="14" fill="#6b7280" fontWeight="500" textAnchor="middle" opacity="0.7">
+          AI-Powered Solution
+        </text>
+
+        {/* Decorative elements */}
+        <circle cx="300" cy="50" r="3" fill="#ac83f3" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="320" cy="350" r="3" fill="#ac83f3" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </motion.div>
+  );
+}
+
 function Frame2075() {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:gap-[31px] items-start justify-between relative shrink-0 w-full h-full">
       <motion.div 
-        className="aspect-[4/3] bg-project-openxp shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1 overflow-hidden flex items-center justify-center" 
-        data-name="Student Avatars" 
+        className="aspect-[4/3] bg-gradient-to-br from-purple-50 to-purple-100/50 shrink-0 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[572px] rounded-lg shadow-md flex-1 overflow-hidden border border-purple-200/30" 
+        data-name="Context Illustration" 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <ImageWithFallback
-          src={imgPlaceholder1}
-          alt="Student Avatars placeholder"
-          className="w-full h-full object-contain"
-        />
-      </motion.div>
-      <motion.div 
-        className="aspect-[16/10] bg-project-openxp shrink-0 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-md overflow-hidden flex items-center justify-center" 
-        data-name="Mobile Interface Screenshot" 
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <ImageWithFallback
-          src={imgPlaceholder2}
-          alt="Mobile Interface Screenshot placeholder"
-          className="w-full h-full object-contain"
-        />
+        <ContextOpportunityIllustration />
       </motion.div>
     </div>
   );
@@ -1015,11 +1120,11 @@ function MainContent({ activeSection }: { activeSection: string }) {
             >
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 1 — AI-Powered Exam Preparation
+                  Process 1 — Home Dashboard & Analytics
                 </h3>
                 
                 <p className="mb-4">
-                  An intelligent exam prep system that helps students prepare for career-defining tests. The AI tools provide personalized study recommendations, help students make better choices about their careers and subjects, and create an organized approach to exam preparation.
+                  The home dashboard provides students with a comprehensive overview of their learning journey. It features time spending statistics with interactive bar charts, weekly filters, and key performance metrics including study duration, total tests taken, and average test scores. The dashboard also includes local leaderboards showing rankings, trophy points, and test statistics, along with a user profile section displaying upcoming exams in a calendar format.
                 </p>
 
                 <div>
@@ -1027,51 +1132,48 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      AI-powered study recommendations
+                      Time spending analytics with weekly bar charts
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Career and subject guidance
+                      Performance metrics (study duration, tests taken, average scores)
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Personalized study paths
+                      Local leaderboards with rankings and trophy points
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Progress tracking and organization
+                      Upcoming exams calendar and schedule management
                     </li>
                   </ul>
                 </div>
 
-                {/* AI Tutor Interface Screenshot */}
+                {/* Home Dashboard Screenshot */}
                 <motion.div 
                   className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  onDoubleClick={() => openImagePopup(imgDesignSolution1)}
+                  onDoubleClick={() => openImagePopup(imgDesignSolution5)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   role="button"
                   tabIndex={0}
-                  aria-label="AI-Tutor interface showing real-time adaptive guidance"
+                  aria-label="Openxp home dashboard showing time spending analytics, leaderboards, and user profile"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      openImagePopup(imgDesignSolution1);
+                      openImagePopup(imgDesignSolution5);
                     }
                   }}
                 >
                   <div className="relative w-full">
-                    <div className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden">
-                      <ImageWithFallback
-                        src={imgDesignSolution1}
-                        alt="Openxp interface placeholder"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
+                    <div 
+                      className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden bg-center bg-contain bg-no-repeat"
+                      style={{ backgroundImage: `url('${imgDesignSolution5}')` }}
+                    />
                     
                     {/* Hover overlay with expand hint */}
                     <motion.div
@@ -1094,7 +1196,7 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   {/* Caption */}
                   <div className="p-3 md:p-4 bg-white border-t border-gray-100">
                     <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                      Screenshot: Openxp interface placeholder - to be updated.
+                      Home Dashboard: Time spending analytics, leaderboards, and user profile overview
                     </p>
                   </div>
                 </motion.div>
@@ -1102,11 +1204,11 @@ function MainContent({ activeSection }: { activeSection: string }) {
 
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 2 — Study Organization & Tracking
+                  Process 2 — Personalized Learning Setup
                 </h3>
                 
                 <p className="mb-4">
-                  Built an intuitive system for organizing study materials and tracking progress. Students can easily manage their exam preparation, see their progress, and stay organized throughout their study journey.
+                  The personalized learning setup interface allows students to configure their ideal learning experience. Students can select their preferred learning method from options including AI tutor, Reading Method, or Hybrid Method. The interface includes form fields for selecting grade level, topic, subject, and difficulty level, enabling the platform to personalize the learning journey based on individual preferences and academic needs.
                 </p>
 
                 <div>
@@ -1114,130 +1216,83 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Study material organization
+                      Learning method selection (AI tutor, Reading, Hybrid)
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Progress tracking and analytics
+                      Grade, topic, subject, and difficulty level configuration
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Exam preparation timeline management
+                      Personalized learning journey initialization
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
+                      Intuitive form-based setup process
                     </li>
                   </ul>
                 </div>
 
-                {/* Screenshots */}
-                <div className="flex flex-col gap-4 md:gap-6 mt-4">
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution2)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Quiz Interaction UI showing immediate XP feedback on correct answers"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution2);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution2}')` }}
-                        />
-                      </div>
-                      
+                {/* Personal Learning Setup Screenshot */}
+                <motion.div 
+                  className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  onDoubleClick={() => openImagePopup(imgDesignSolution4)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Personalized learning setup interface with learning method selection and configuration options"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openImagePopup(imgDesignSolution4);
+                    }
+                  }}
+                >
+                  <div className="relative w-full">
+                    <div 
+                      className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden bg-center bg-contain bg-no-repeat"
+                      style={{ backgroundImage: `url('${imgDesignSolution4}')` }}
+                    />
+                    
+                    {/* Hover overlay with expand hint */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
                       <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
+                        className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
+                        <span className="text-lg">🔍</span>
+                        <span>Double-click to expand</span>
                       </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution3)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Lesson Completion UI showing visual streaks, accuracy, and celebration moments"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution3);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution3}')` }}
-                        />
-                      </div>
-                      
-                      <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                      >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Caption */}
+                  <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                    <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                      Personalized Learning Setup: Learning method selection and configuration interface
+                    </p>
+                  </div>
+                </motion.div>
               </div>
 
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 3 — User Interface & Experience
+                  Process 3 — AI Tutor Interface
                 </h3>
                 
                 <p className="mb-4">
-                  Designed an easy-to-use interface that makes exam preparation feel manageable and organized. The platform provides clear navigation, intuitive workflows, and a supportive user experience that helps students focus on their studies.
+                  The AI tutor interface provides an interactive learning experience with a personalized tutor introduction. Students meet their AI tutor (such as Sarah) through a welcoming interface that includes a tutor image set in a classroom environment. The interface features an interactive question input field supporting both text and voice input, allowing students to ask questions and receive guidance. The interface also includes interactive flashcards covering key topics like "50 Applicable Forms of Motion," "Formulas for Motion," and "Laws of Motion," making complex concepts more accessible and engaging.
                 </p>
 
                 <div>
@@ -1245,134 +1300,83 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Intuitive navigation and workflows
+                      Personalized AI tutor introduction with visual representation
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Clean, organized interface design
+                      Interactive question input with text and voice support
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Responsive design for multiple devices
+                      Interactive flashcards for key learning topics
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Accessible and user-friendly interactions
+                      Engaging classroom-style visual design
                     </li>
                   </ul>
                 </div>
 
-                {/* Screenshots */}
-                <div className="flex flex-col gap-4 md:gap-6 mt-4">
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution4)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Course Setup UI for managing modules, assignments, and quizzes"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution4);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution4}')` }}
-                        />
-                      </div>
-                      
+                {/* AI Tutor Interface Screenshot */}
+                <motion.div 
+                  className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  onDoubleClick={() => openImagePopup(imgDesignSolution1)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="AI tutor interface with tutor introduction, interactive Q&A, and flashcards"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openImagePopup(imgDesignSolution1);
+                    }
+                  }}
+                >
+                  <div className="relative w-full">
+                    <div 
+                      className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden bg-center bg-contain bg-no-repeat"
+                      style={{ backgroundImage: `url('${imgDesignSolution1}')` }}
+                    />
+                    
+                    {/* Hover overlay with expand hint */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
                       <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
+                        className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
+                        <span className="text-lg">🔍</span>
+                        <span>Double-click to expand</span>
                       </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution5)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Analytics Dashboard UI showing student performance and progress summaries"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution5);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution5}')` }}
-                        />
-                      </div>
-                      
-                      <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                      >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Caption */}
+                  <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                    <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                      AI Tutor Interface: Interactive learning experience with tutor introduction and flashcards
+                    </p>
+                  </div>
+                </motion.div>
               </div>
 
               <div>
                 <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
-                  Process 4 — Version Iteration & Development
+                  Process 4 — Lesson Learning Interface
                 </h3>
                 
                 <p className="mb-4">
-                  Led the development of two versions of Openxp, applying iterative design principles and user feedback to improve the platform. Each version built upon previous learnings to create a more refined and effective exam preparation experience.
+                  The lesson learning interface provides a structured approach to content delivery with clear progress tracking. Students can navigate through lessons with a progress bar showing their current position (e.g., page 1 of 9). The interface displays lesson content with definitions and explanations, and includes interactive buttons for requesting simpler explanations, real-life scenarios, and navigation to the next section. Pagination controls at the bottom allow students to easily navigate through all lesson pages, making the learning experience organized and manageable.
                 </p>
 
                 <div>
@@ -1380,126 +1384,160 @@ function MainContent({ activeSection }: { activeSection: string }) {
                   <ul className="space-y-1 pl-6 md:pl-8">
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Iterative design improvements
+                      Progress bar showing current lesson position
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      User feedback integration
+                      Interactive content buttons (simpler explanation, real-life scenarios)
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Enhanced features and functionality
+                      Pagination controls for lesson navigation
                     </li>
                     <li className="relative">
                       <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
-                      Improved user experience across versions
+                      Download lesson as PDF functionality
                     </li>
                   </ul>
                 </div>
 
-                {/* Screenshots */}
-                <div className="flex flex-col gap-4 md:gap-6 mt-4">
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution6)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Institution Dashboard UI showing overview of enrolled students, lecturers, and programs"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution6);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution6}')` }}
-                        />
-                      </div>
-                      
+                {/* Lesson Learning Interface Screenshot */}
+                <motion.div 
+                  className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  onDoubleClick={() => openImagePopup(imgDesignSolution2)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Lesson learning interface with progress tracking, interactive buttons, and pagination"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openImagePopup(imgDesignSolution2);
+                    }
+                  }}
+                >
+                  <div className="relative w-full">
+                    <div 
+                      className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden bg-center bg-contain bg-no-repeat"
+                      style={{ backgroundImage: `url('${imgDesignSolution2}')` }}
+                    />
+                    
+                    {/* Hover overlay with expand hint */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
                       <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
+                        className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
+                        <span className="text-lg">🔍</span>
+                        <span>Double-click to expand</span>
                       </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 cursor-pointer group"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    onDoubleClick={() => openImagePopup(imgDesignSolution7)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Programs Management UI for faculties and departments management with course-level control"
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openImagePopup(imgDesignSolution7);
-                      }
-                    }}
-                  >
-                    <div className="relative w-full">
-                      <div className="aspect-[4/3] w-full bg-project-openxp">
-                        <div
-                          className="absolute inset-0 bg-center bg-contain bg-no-repeat group-hover:bg-[length:102%] transition-all duration-300 ease-out"
-                          style={{ backgroundImage: `url('${imgDesignSolution7}')` }}
-                        />
-                      </div>
-                      
-                      <motion.div
-                        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                      >
-                        <motion.div
-                          className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <span className="text-lg">🔍</span>
-                          <span>Double-click to expand</span>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                    <div className="p-3 md:p-4 bg-white border-t border-gray-100">
-                      <p className="text-xs md:text-sm text-gray-600 italic text-center">
-                        Openxp interface placeholder - to be updated
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Caption */}
+                  <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                    <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                      Lesson Learning Interface: Progress tracking, interactive content, and pagination controls
+                    </p>
+                  </div>
+                </motion.div>
               </div>
+
+              <div>
+                <h3 className="font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif] text-lg md:text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] text-[#7c736a] tracking-[-0.01em] lg:tracking-[-0.28px] 2xl:tracking-[-0.32px] mb-2 md:mb-3">
+                  Process 5 — Test Environment
+                </h3>
+                
+                <p className="mb-4">
+                  The test environment provides a comprehensive exam-taking experience with clear question display and navigation. Students can view questions with multiple choice options (A, B, C, D) in a clean, focused interface. A progress bar at the top shows overall test completion, and an "All Questions" panel displays a grid of all 50 questions, allowing students to quickly navigate to any question. The interface includes a "Next" button for sequential navigation, making it easy for students to move through the test efficiently while maintaining awareness of their progress.
+                </p>
+
+                <div>
+                  <p className="mb-2 mt-4 font-['IBM_Plex_Sans_Condensed:SemiBold',_sans-serif]">Core Features</p>
+                  <ul className="space-y-1 pl-6 md:pl-8">
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
+                      Multiple choice question display with clear option layout
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
+                      Progress bar showing test completion status
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
+                      "All Questions" navigation panel with question grid
+                    </li>
+                    <li className="relative">
+                      <span className="absolute -left-6 md:-left-8 text-project-openxp">•</span>
+                      Sequential and random question navigation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Test Environment Screenshot */}
+                <motion.div 
+                  className="bg-project-openxp rounded-lg overflow-hidden shadow-lg border border-gray-100 mb-4 md:mb-6 cursor-pointer group mt-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  onDoubleClick={() => openImagePopup(imgDesignSolution3)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Test environment interface with question display, progress tracking, and question navigation"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      openImagePopup(imgDesignSolution3);
+                    }
+                  }}
+                >
+                  <div className="relative w-full">
+                    <div 
+                      className="aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[16/9] w-full bg-project-openxp flex items-center justify-center overflow-hidden bg-center bg-contain bg-no-repeat"
+                      style={{ backgroundImage: `url('${imgDesignSolution3}')` }}
+                    />
+                    
+                    {/* Hover overlay with expand hint */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <motion.div
+                        className="bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 font-['Inter:Medium',_sans-serif] text-[#150c0c] text-sm md:text-base tracking-[-0.02em] flex items-center gap-2 shadow-lg border border-white/50"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <span className="text-lg">🔍</span>
+                        <span>Double-click to expand</span>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Caption */}
+                  <div className="p-3 md:p-4 bg-white border-t border-gray-100">
+                    <p className="text-xs md:text-sm text-gray-600 italic text-center">
+                      Test Environment: Question display, progress tracking, and comprehensive question navigation
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+
             </motion.div>
           </section>
 
@@ -1849,7 +1887,7 @@ export default function OpenxpCaseStudy({ onClose }: OpenxpCaseStudyProps) {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = React.useCallback((sectionId: string) => {
     // Disable intersection observer during manual navigation
     setIsNavigating(true);
     setActiveSection(sectionId);
@@ -1888,7 +1926,75 @@ export default function OpenxpCaseStudy({ onClose }: OpenxpCaseStudyProps) {
       // If element not found, reset immediately
       setIsNavigating(false);
     }
-  };
+  }, [setActiveSection, setIsNavigating]);
+
+  React.useEffect(() => {
+    const supportedKeys = new Set([
+      "ArrowDown",
+      "ArrowUp",
+      "PageDown",
+      "PageUp",
+      "Home",
+      "End",
+    ]);
+
+    const handleKeyNavigation = (event: KeyboardEvent) => {
+      if (!supportedKeys.has(event.key)) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      if (target) {
+        const tagName = target.tagName?.toLowerCase();
+        if (
+          tagName &&
+          (tagName === "input" ||
+            tagName === "textarea" ||
+            tagName === "select" ||
+            target.isContentEditable)
+        ) {
+          return;
+        }
+        if (target.getAttribute("role") === "textbox") {
+          return;
+        }
+      }
+
+      const currentIndex = CASE_STUDY_SECTION_IDS.indexOf(activeSection);
+      if (currentIndex === -1) {
+        return;
+      }
+
+      let nextIndex = currentIndex;
+      switch (event.key) {
+        case "ArrowDown":
+        case "PageDown":
+          nextIndex = Math.min(
+            CASE_STUDY_SECTION_IDS.length - 1,
+            currentIndex + 1
+          );
+          break;
+        case "ArrowUp":
+        case "PageUp":
+          nextIndex = Math.max(0, currentIndex - 1);
+          break;
+        case "Home":
+          nextIndex = 0;
+          break;
+        case "End":
+          nextIndex = CASE_STUDY_SECTION_IDS.length - 1;
+          break;
+      }
+
+      if (nextIndex !== currentIndex) {
+        event.preventDefault();
+        scrollToSection(CASE_STUDY_SECTION_IDS[nextIndex]);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNavigation);
+    return () => window.removeEventListener("keydown", handleKeyNavigation);
+  }, [activeSection, scrollToSection]);
 
   // Update active section based on scroll position
   React.useEffect(() => {
