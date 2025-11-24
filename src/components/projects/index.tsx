@@ -73,7 +73,7 @@ export function CustomerExperienceProject() {
     <ProjectCard
       title="Customer Experience Solutions"
       category="B2B Customer Software"
-      year="2024"
+      year="2023 - 2024"
       description="Designed comprehensive customer experience solutions for B2B software platforms. Focused on creating intuitive interfaces that enhance user satisfaction and business outcomes. Led cross-functional teams to deliver data-driven design solutions that improved customer retention by 40%."
       imageSrc={imgImage19}
       backgroundColor="#0d6efd"
@@ -88,7 +88,7 @@ export function WikipediaProject() {
     <ProjectCard
       title="Wikipedia Community Profile"
       category="Community Platform"
-      year="2023"
+      year="2024"
       description="Designed an improved version of the Wikipedia Community Portal focused on accessibility and cognitive clarity. Created prototypes with assistive features like text-to-speech, a distraction-free reading mode, and simplified navigation. Applied principles such as the inverted pyramid, whitespace management, and reduced visual load for users with dyslexia."
       imageSrc={imgWikipediaCommunity}
       backgroundColor="#0645AD"

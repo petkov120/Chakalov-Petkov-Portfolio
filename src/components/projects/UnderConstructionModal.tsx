@@ -55,7 +55,7 @@ export function UnderConstructionModal({
         {/* Content - Text at top, Image at bottom */}
         <div className="flex flex-col">
           {/* Text Section at Top */}
-          <div className="px-6 pt-8 pb-4 text-center">
+          <div className="px-6 pt-20 pb-4 mt-4 text-center">
             <motion.h3
               className="font-['Lora:Medium',_sans-serif] text-xl md:text-2xl text-[#150c0c] mb-2 tracking-[-0.02em]"
               initial={{ opacity: 0, y: -10 }}
@@ -74,7 +74,8 @@ export function UnderConstructionModal({
               <img
                 src={constructionWorkerImg}
                 alt="Under construction"
-                className="w-full max-w-[280px] h-auto object-contain"
+                className="w-full max-w-[180px] h-[180px] object-contain my-2"
+
               />
             </motion.div>
 

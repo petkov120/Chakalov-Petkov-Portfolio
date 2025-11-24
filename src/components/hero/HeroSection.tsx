@@ -5,6 +5,7 @@ import { Download, Github } from 'lucide-react';
 import imgChatGptImageJul122025011140Am2 from "figma:asset/4774270e396720874460c4f8aeecbc8d19672f4e.png";
 import { AnimatedSection } from '../common/AnimatedSection';
 import { SPACING } from '../../constants/spacing.js';
+import resumePDF from '../resume/Petkov Richard Chakalov (1).pdf';
 
 // Hero Image Components
 function Frame3() {
@@ -65,31 +66,27 @@ HeroImageCollage.displayName = 'HeroImageCollage';
 export function DownloadResumeButton() {
   const { playHoverSound, playSuccessSound } = useSound();
 
-  const handleDownload = async () => {
+  const handleDownload = () => {
     playSuccessSound();
     try {
-      // Dynamically import the PDF generation function
-      const { generateResumePDF } = await import('../resume/ResumePDF');
-      await generateResumePDF(
-        () => {
-          // Download started
-        },
-        () => {
-          // Download complete
-          playSuccessSound();
-        }
-      );
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = resumePDF;
+      link.download = 'Petkov_Richard_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      playSuccessSound();
     } catch (error) {
-      console.error('Error generating resume PDF:', error);
-      // Fallback: show error message
-      alert('Error generating resume. Please try again.');
+      console.error('Error downloading resume PDF:', error);
+      alert('Error downloading resume. Please try again.');
     }
   };
 
   return (
     <motion.button 
       layout={false}
-      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none transition-all duration-200 border-2 border-[#2c1810] text-[#2c1810] bg-white hover:bg-[#2c1810] hover:text-white hover:shadow-md active:scale-[0.98] w-auto"
+      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none transition-all duration-200 border-2 border-[#2c1810] text-[#2c1810] bg-white hover:bg-[#2c1810] hover:text-white hover:shadow-md active:scale-[0.98] w-auto cursor-pointer"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.95 }}
       onMouseEnter={() => playHoverSound(900, 120, 0.15)}
@@ -111,7 +108,7 @@ export function GitHubLink() {
       href="https://github.com/petkov120"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none bg-black text-white hover:bg-neutral-900 shadow-md shadow-black/20 transition-all duration-200 group"
+      className="flex items-center justify-center gap-2.5 rounded-lg h-10 md:h-11 px-5 md:px-6 py-2.5 text-sm font-semibold leading-none bg-black text-white hover:bg-neutral-900 shadow-md shadow-black/20 transition-all duration-200 group cursor-pointer"
       whileHover={{ scale: 1.02 }}
       onMouseEnter={() => playHoverSound(800, 100, 0.1)}
       aria-label="View my GitHub profile"
