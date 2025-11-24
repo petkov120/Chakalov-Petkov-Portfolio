@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import React from "react";
 import { useSound } from "../../hooks/useSound";
-import constructionWorkerImg from "../../assets/CSt woeker.png";
+import constructionWorkerImg from "../../assets/CSt woeker.webp";
 
 interface UnderConstructionModalProps {
   isOpen: boolean;
