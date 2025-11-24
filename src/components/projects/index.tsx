@@ -63,6 +63,7 @@ export function MolerHealthProject() {
       imageSrc={imgMolerHealthDashboard}
       backgroundColor="#10b981"
       dataSection="molerhealth"
+      showUnderConstruction={true}
     />
   );
 }
@@ -77,6 +78,7 @@ export function CustomerExperienceProject() {
       imageSrc={imgImage19}
       backgroundColor="#0d6efd"
       dataSection="customer-experience"
+      showUnderConstruction={true}
     />
   );
 }
@@ -91,6 +93,7 @@ export function WikipediaProject() {
       imageSrc={imgWikipediaCommunity}
       backgroundColor="#0645AD"
       dataSection="wikipedia"
+      showUnderConstruction={true}
     />
   );
 }
