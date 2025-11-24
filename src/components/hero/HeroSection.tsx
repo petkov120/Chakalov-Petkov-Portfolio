@@ -5,7 +5,7 @@ import { Download, Github } from 'lucide-react';
 import imgChatGptImageJul122025011140Am2 from "figma:asset/4774270e396720874460c4f8aeecbc8d19672f4e.png";
 import { AnimatedSection } from '../common/AnimatedSection';
 import { SPACING } from '../../constants/spacing.js';
-import resumePDF from '../resume/Petkov Richard Chakalov (1).pdf';
+import resumePDF from '../resume/Petkov Richard Chakalov (2).pdf';
 
 // Hero Image Components
 function Frame3() {
